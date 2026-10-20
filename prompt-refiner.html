@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>محسّن البرومبت التفاعلي | بوسطيلة السعيد</title>
+    <title id="pageTitle">محسّن البرومبت التفاعلي | بوسطيلة السعيد</title>
     <style>
         :root {
             --bg-color: #0f172a;
@@ -16,18 +16,42 @@
             --border-color: #334155;
         }
 
-        * { box-sizing: border-box; margin: 0; padding: 0; font-family: system-ui, sans-serif; }
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; }
         body { background-color: var(--bg-color); color: var(--text-main); padding: 20px; line-height: 1.6; }
 
+        header {
+            max-width: 650px;
+            margin: 0 auto 20px auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .brand-name {
+            font-weight: bold;
+            font-size: 1.1rem;
+            color: var(--text-main);
+        }
+
+        .lang-switcher select {
+            background: var(--card-bg);
+            color: var(--text-main);
+            border: 1px solid var(--border-color);
+            padding: 6px 12px;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            outline: none;
+        }
+
         .app-card {
-            max-width: 650px; margin: 20px auto; background: var(--card-bg);
+            max-width: 650px; margin: 0 auto; background: var(--card-bg);
             border: 1px solid var(--border-color); border-radius: 12px; padding: 25px;
         }
 
         h2 { color: #60a5fa; margin-bottom: 8px; text-align: center; }
         p.subtitle { color: var(--text-muted); text-align: center; margin-bottom: 25px; font-size: 0.95rem; }
 
-        .form-group { margin-bottom: 18px; }
+        .form-group { margin-bottom: 18px; text-align: start; }
         label { display: block; font-weight: bold; margin-bottom: 8px; }
 
         input[type="text"], textarea, select {
@@ -43,6 +67,7 @@
         .output-box {
             background: rgba(139, 92, 246, 0.1); border: 1px solid var(--accent-purple);
             border-radius: 10px; padding: 18px; margin-top: 25px; position: relative;
+            text-align: start;
         }
 
         .output-title { font-weight: bold; color: #a78bfa; margin-bottom: 10px; font-size: 0.95rem; }
@@ -50,6 +75,7 @@
         pre {
             white-space: pre-wrap; word-wrap: break-word; font-family: monospace;
             background: #090d16; padding: 12px; border-radius: 6px; font-size: 0.9rem; color: #e2e8f0;
+            text-align: left; direction: ltr;
         }
 
         .btn-copy {
@@ -59,80 +85,47 @@
         }
 
         .btn-copy:hover { opacity: 0.9; }
-        .btn-back { display: block; text-align: center; margin-top: 15px; color: var(--text-muted); text-decoration: none; font-size: 0.9rem; }
+        .btn-back { display: block; text-align: center; margin-top: 20px; color: var(--text-muted); text-decoration: none; font-size: 0.9rem; }
+
+        [dir="ltr"] pre { text-align: left; }
     </style>
 </head>
 <body>
 
+    <header>
+        <div class="brand-name" id="headerBrand">بوسطيلة السعيد</div>
+        <div class="lang-switcher">
+            <select id="languageSelect" onchange="switchLanguage(this.value)">
+                <option value="ar" selected>العربية (AR)</option>
+                <option value="fr">Français (FR)</option>
+                <option value="en">English (EN)</option>
+                <option value="de">Deutsch (DE)</option>
+            </select>
+        </div>
+    </header>
+
     <div class="app-card">
-        <h2>🪄 محسّن ومصمم البرومبت الذكي</h2>
-        <p class="subtitle">حوّل الفكرة البسيطة إلى أمر (Prompt) احترافي عالي الدقة موجه للذكاء الاصطناعي</p>
+        <h2 id="appTitle">🪄 محسّن ومصمم البرومبت الذكي</h2>
+        <p class="subtitle" id="appSubtitle">حوّل الفكرة البسيطة إلى أمر (Prompt) احترافي عالي الدقة موجه للذكاء الاصطناعي</p>
 
         <div class="form-group">
-            <label for="userTopic">1. الفكرة الأساسية أو الطلب :</label>
-            <textarea id="userTopic" placeholder="مثال: اكتب لي منشور تسويقي عن خدمة المونتاج والتصوير التجاري" oninput="generatePrompt()"></textarea>
+            <label for="userTopic" id="labelTopic">1. الفكرة الأساسية أو الطلب :</label>
+            <textarea id="userTopic" placeholder="اكتب فكرتك هنا..." oninput="generatePrompt()"></textarea>
         </div>
 
         <div class="grid-2">
             <div class="form-group">
-                <label for="aiRole">2. دور الذكاء الاصطناعي :</label>
+                <label for="aiRole" id="labelRole">2. دور الذكاء الاصطناعي :</label>
                 <select id="aiRole" onchange="generatePrompt()">
-                    <option value="خبير تسويق وصناعة محتوى">خبير تسويق وصناعة محتوى</option>
-                    <option value="مصمم جرافيك وهويات بصرية">مصمم جرافيك وهويات بصرية</option>
-                    <option value="مطور وأخصائي أتمتة">مطور وأخصائي أتمتة</option>
-                    <option value="باحث ومستشار استراتيجي">باحث ومستشار استراتيجي</option>
+                    <!-- يتم تعبئتها ديناميكياً عبر الجافاسكريبت حسب اللغة -->
                 </select>
             </div>
 
             <div class="form-group">
-                <label for="toneStyle">3. أسلوب ونبرة الطرح :</label>
+                <label for="toneStyle" id="labelTone">3. أسلوب ونبرة الطرح :</label>
                 <select id="toneStyle" onchange="generatePrompt()">
-                    <option value="احترافي ومباشر">احترافي ومباشر</option>
-                    <option value="إبداعي وجذاب">إبداعي وجذاب</option>
-                    <option value="تقني ودقيق جداً">تقني ودقيق جداً</option>
-                    <option value="سلس ومناسب لشبكات التواصل">سلس ومناسب لشبكات التواصل</option>
+                    <!-- يتم تعبئتها ديناميكياً عبر الجافاسكريبت حسب اللغة -->
                 </select>
             </div>
         </div>
 
-        <div class="output-box">
-            <div class="output-title">📋 البرومبت المحسّن الجاهز للاستخدام :</div>
-            <pre id="promptResult">أدخل الفكرة أعلاه لتوليد البرومبت...</pre>
-            <button class="btn-copy" onclick="copyPrompt()">📋 نسخ البرومبت الجاهز</button>
-        </div>
-
-        <a href="index.html" class="btn-back">← العودة إلى الصفحة الرئيسية</a>
-    </div>
-
-    <script>
-        function generatePrompt() {
-            const topic = document.getElementById('userTopic').value.trim();
-            const role = document.getElementById('aiRole').value;
-            const tone = document.getElementById('toneStyle').value;
-
-            if (!topic) {
-                document.getElementById('promptResult').innerText = "يرجى كتابة الفكرة أو الموضوع أعلاه...";
-                return;
-            }
-
-            const structuredPrompt = 
-`أنت ${role}.
-الهدف: ${topic}
-
-التزم بالضوابط التالية أثناء الإجابة:
-- النبرة والأسلوب: ${tone}.
-- إعطاء إجابة مباشرة ودقيقة دون مقدمات استهلاكية أو تكرار.
-- هيكلة النتيجة في نقاط واضحة ومقسّمة بشكل يسهل قراءته وتطبيقه.`;
-
-            document.getElementById('promptResult').innerText = structuredPrompt;
-        }
-
-        function copyPrompt() {
-            const text = document.getElementById('promptResult').innerText;
-            navigator.clipboard.writeText(text).then(() => {
-                alert("تم نسخ البرومبت بنجاح! يمكنك استخدامه الآن في ChatGPT أو Claude أو Gemini.");
-            });
-        }
-    </script>
-</body>
-</html>

@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Said Boustila | سعيد بوستيلة - Portfolio</title>
-    <!-- Meta SEO -->
     <meta name="description" content="الموقع المهني لسعيد بوستيلة - صناعة المحتوى، التصميم الجرافيكي، التصوير التجاري، المونتاج، والذكاء الاصطناعي.">
     
     <style>
@@ -32,7 +31,6 @@
             padding-bottom: 40px;
         }
 
-        /* Top Bar & Language Switcher */
         header {
             background-color: var(--card-bg);
             border-bottom: 1px solid var(--border-color);
@@ -61,14 +59,12 @@
             outline: none;
         }
 
-        /* Container */
         .container {
             max-width: 1000px;
             margin: 0 auto;
             padding: 20px;
         }
 
-        /* Hero Section */
         .hero {
             text-align: center;
             padding: 40px 10px;
@@ -88,7 +84,6 @@
             margin: 0 auto 25px auto;
         }
 
-        /* Visitor Action Buttons */
         .hero-actions {
             display: flex;
             gap: 12px;
@@ -111,7 +106,6 @@
         .btn-outline { border: 1px solid var(--border-color); color: var(--text-main); }
         .btn:hover { opacity: 0.9; }
 
-        /* Section Headings */
         .section-title {
             font-size: 1.5rem;
             margin: 40px 0 20px 0;
@@ -119,7 +113,6 @@
             padding-right: 12px;
         }
 
-        /* Grid */
         .grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -131,6 +124,7 @@
             border: 1px solid var(--border-color);
             border-radius: 10px;
             padding: 20px;
+            text-align: start;
         }
 
         .card h3 {
@@ -144,7 +138,6 @@
             color: var(--text-muted);
         }
 
-        /* Skills Tags */
         .skills-wrapper {
             display: flex;
             flex-wrap: wrap;
@@ -161,11 +154,17 @@
             color: var(--text-main);
         }
 
-        /* Contact & Social Links */
+        .contact-group-title {
+            font-size: 1.1rem;
+            color: #60a5fa;
+            margin: 20px 0 10px 0;
+            font-weight: 600;
+        }
+
         .contact-list {
             display: flex;
             flex-direction: column;
-            gap: 12px;
+            gap: 10px;
         }
 
         .contact-item {
@@ -173,17 +172,16 @@
             align-items: center;
             justify-content: space-between;
             background-color: var(--card-bg);
-            padding: 14px 18px;
+            padding: 12px 16px;
             border-radius: 8px;
             border: 1px solid var(--border-color);
             text-decoration: none;
             color: var(--text-main);
         }
 
-        .contact-item span.label { font-weight: 600; }
-        .contact-item span.badge { font-size: 0.8rem; padding: 4px 8px; border-radius: 4px; background: var(--border-color); }
+        .contact-item span.label { font-weight: 600; font-size: 0.95rem; }
+        .contact-item span.badge { font-size: 0.8rem; padding: 4px 8px; border-radius: 4px; background: var(--border-color); color: var(--text-muted); }
 
-        /* LTR Fixes */
         [dir="ltr"] .section-title {
             border-right: none;
             border-left: 4px solid var(--accent-color);
@@ -194,7 +192,6 @@
 </head>
 <body>
 
-    <!-- Header & Language Switcher -->
     <header>
         <div class="brand-name">سعيد بوستيلة | Said Boustila</div>
         <div class="lang-switcher">
@@ -221,7 +218,7 @@
             </div>
         </section>
 
-        <!-- Technical Tools Section -->
+        <!-- Tools Section -->
         <section id="tools">
             <h2 class="section-title" id="secToolsTitle">الأدوات والتقنيات المستعملة</h2>
             <div class="skills-wrapper">
@@ -229,7 +226,7 @@
                 <span class="skill-tag">Adobe Illustrator</span>
                 <span class="skill-tag">InDesign</span>
                 <span class="skill-tag">Lightroom</span>
-                <span class="skill-tag">تصوير بالإضاءة الطبيعية</span>
+                <span class="skill-tag" id="skillLighting">تصوير بالإضاءة الطبيعية</span>
             </div>
         </section>
 
@@ -264,7 +261,7 @@
             </div>
         </section>
 
-        <!-- Portfolio 1: Professional Projects -->
+        <!-- Portfolio 1 -->
         <section id="portfolio1">
             <h2 class="section-title" id="secP1Title">معرض الأعمال (1): المشاريع المهنية والتجارية</h2>
             <div class="grid">
@@ -279,7 +276,7 @@
             </div>
         </section>
 
-        <!-- Portfolio 2: Special Projects & AI / Heritage -->
+        <!-- Portfolio 2 -->
         <section id="portfolio2">
             <h2 class="section-title" id="secP2Title">معرض الأعمال (2): الذكاء الاصطناعي والتراث الثقافي</h2>
             <div class="grid">
@@ -294,17 +291,15 @@
             </div>
         </section>
 
-        <!-- Certificates & Testimonials Section -->
+        <!-- Certificates Section -->
         <section id="certificates">
             <h2 class="section-title" id="secCertTitle">الشهادات والاعتمادات المهنية</h2>
             <div class="grid">
-                <!-- Claude 101 Certificate -->
                 <div class="card" style="border: 1px solid var(--accent-color);">
-                    <h3 style="color: #ffffff;">شهادة إتمام Claude 101</h3>
+                    <h3 style="color: #ffffff;" id="cert1Title">شهادة إتمام Claude 101</h3>
                     <p style="color: var(--text-muted); margin-bottom: 12px;">19 أكتوبر 2026 — Anthropic Education</p>
                     <a href="#" class="btn btn-outline" style="font-size: 0.85rem; padding: 6px 14px; color: #f87171; border-color: #f87171;" id="btnVerifyCert">تحقق من الشهادة</a>
                 </div>
-                <!-- General Diplomas -->
                 <div class="card">
                     <h3 id="c1Title">الاعتمادات والدبلومات المهنية</h3>
                     <p id="c1Desc">توثيق الخبرات في التصميم الرقمي، التصوير، وإدارة التقنيات الحديثة والذكاء الاصطناعي.</p>
@@ -312,29 +307,87 @@
             </div>
         </section>
 
-        <!-- Official Contact Section -->
+        <!-- Complete Official Contact Section -->
         <section id="contact">
-            <h2 class="section-title" id="secContactTitle">تواصل معي مباشرة</h2>
+            <h2 class="section-title" id="secContactTitle">تواصل معي والقنوات الرسمية</h2>
+            
+            <!-- Primary Channels -->
+            <div class="contact-group-title" id="grpPrimary">1. المراسلات والتواصل المباشر</div>
             <div class="contact-list">
                 <a href="https://wa.me/213674767958" class="contact-item" target="_blank">
                     <span class="label">💬 WhatsApp Business</span>
-                    <span class="badge" style="background-color: #10b981; color:#fff;">مباشر وسريع</span>
+                    <span class="badge" style="background-color: #10b981; color:#fff;" id="b1">مباشر وسريع</span>
                 </a>
                 <a href="mailto:boustilasaid7@gmail.com" class="contact-item">
                     <span class="label">✉️ Gmail Official</span>
-                    <span class="badge">المراسلات الرسمية</span>
+                    <span class="badge" id="b2">المراسلات الرسمية</span>
                 </a>
                 <a href="https://www.linkedin.com/in/said-boustila-1754ab89/" class="contact-item" target="_blank">
                     <span class="label">💼 LinkedIn Profile</span>
-                    <span class="badge">الهوية المهنية</span>
+                    <span class="badge" id="b3">الهوية المهنية</span>
                 </a>
+                <a href="mailto:boustila@dmail.ai" class="contact-item">
+                    <span class="label">🌐 Dmail Web3</span>
+                    <span class="badge" id="b3_2">البريد اللامركزي</span>
+                </a>
+            </div>
+
+            <!-- Portfolio & Development -->
+            <div class="contact-group-title" id="grpDev">2. معارض الأعمال والبرمجة</div>
+            <div class="contact-list">
                 <a href="https://www.behance.net/noureddine715a" class="contact-item" target="_blank">
                     <span class="label">🎨 Behance Portfolio</span>
-                    <span class="badge">معرض الأعمال</span>
+                    <span class="badge" id="b4">معرض الأعمال</span>
                 </a>
                 <a href="https://github.com/Boustila74" class="contact-item" target="_blank">
                     <span class="label">💻 GitHub Repository</span>
-                    <span class="badge">المشاريع التقنية</span>
+                    <span class="badge" id="b5">المشاريع التقنية</span>
+                </a>
+            </div>
+
+            <!-- Video & Content Channels -->
+            <div class="contact-group-title" id="grpMedia">3. منصات الفيديو وصناعة المحتوى</div>
+            <div class="contact-list">
+                <a href="https://youtube.com/@boustilasaid" class="contact-item" target="_blank">
+                    <span class="label">▶️ YouTube Channel</span>
+                    <span class="badge" id="b6">قناة الفيديو</span>
+                </a>
+                <a href="https://www.tiktok.com/@boustila0" class="contact-item" target="_blank">
+                    <span class="label">🎵 TikTok Profile</span>
+                    <span class="badge" id="b7">المقاطع القصيرة</span>
+                </a>
+                <a href="https://x.com/Boustila74" class="contact-item" target="_blank">
+                    <span class="label">𝕏 Profile (@Boustila74)</span>
+                    <span class="badge" id="b8">منصة X</span>
+                </a>
+            </div>
+
+            <!-- Social & Community -->
+            <div class="contact-group-title" id="grpSocial">4. الصفحات والمجتمعات الرسمية</div>
+            <div class="contact-list">
+                <a href="https://www.facebook.com/share/1FdwitDgYF/" class="contact-item" target="_blank">
+                    <span class="label">👤 Facebook Personal</span>
+                    <span class="badge" id="b9">الملف الشخصي</span>
+                </a>
+                <a href="https://www.facebook.com/share/19jaFoVZ5g/" class="contact-item" target="_blank">
+                    <span class="label">📄 Facebook Page 1</span>
+                    <span class="badge" id="b10">الصفحة الرسمية 1</span>
+                </a>
+                <a href="https://www.facebook.com/share/1CAShPoGwS/" class="contact-item" target="_blank">
+                    <span class="label">📄 Facebook Page 2</span>
+                    <span class="badge" id="b11">الصفحة الرسمية 2</span>
+                </a>
+                <a href="https://t.me/BoustilaSaid" class="contact-item" target="_blank">
+                    <span class="label">✈️ Telegram Channel</span>
+                    <span class="badge" id="b12">قناة التليجرام</span>
+                </a>
+                <a href="https://discord.com/users/boustila" class="contact-item" target="_blank">
+                    <span class="label">💬 Discord User</span>
+                    <span class="badge" id="b13">مجتمع الديسكورد</span>
+                </a>
+                <a href="https://1tik.social/friendprofile/cmp337k7n0c1a01k4762y91he" class="contact-item" target="_blank">
+                    <span class="label">🔗 1Tik Social Profile</span>
+                    <span class="badge" id="b14">منصة 1Tik</span>
                 </a>
             </div>
         </section>
@@ -350,12 +403,43 @@
                 btnPortfolio2: "معرض الأعمال 2",
                 btnConsult: "طلب استشارة خاصة",
                 secToolsTitle: "الأدوات والتقنيات المستعملة",
+                skillLighting: "تصوير بالإضاءة الطبيعية",
                 secServicesTitle: "الخدمات المهنية الرئيسية",
+                s1Title: "1. التصميم الجرافيكي والتواصل البصري",
+                s1Desc: "تصميم الشعارات، الهويات البصرية، الملصقات الإعلانية، وتصاميم وسائل التواصل الاجتماعي.",
+                s2Title: "2. التصوير التجاري والإنتاجي",
+                s2Desc: "تصوير المنتجات، المزارع، المواشي، والمشاريع التجارية لخدمة الأهداف التسويقية.",
+                s3Title: "3. المونتاج والإنتاج المرئي",
+                s3Desc: "تعديل الفيديوهات، مقاطع Reels، الهندسة الصوتية، والإنتاج المعزز بالذكاء الاصطناعي.",
+                s4Title: "4. صناعة المحتوى والدعم التسويقي",
+                s4Desc: "ابتكار أفكار المحتوى، كتابة النصوص الإعلانية، وإعداد خطط النشر الرقمي.",
+                s5Title: "5. الذكاء الاصطناعي والحلول الرقمية",
+                s5Desc: "بناء مساعدين ذكيين، أتمتة مهام العمل (Make.com)، وبناء الوكلاء الأذكياء.",
+                s6Title: "6. تصميم واجهات ومواقع الويب",
+                s6Desc: "تصميم المواقع التعريفية، صفحات الهبوط (Landing Pages)، وتنظيم المحتوى الرقمي.",
                 secP1Title: "معرض الأعمال (1): المشاريع المهنية والتجارية",
+                p1_1Title: "هويات بصرية وعلامات تجارية",
+                p1_1Desc: "نماذج لتصاميم شعارات وهوية بصرية متكاملة للشركات والمشاريع المصغرة.",
+                p1_2Title: "إنتاج مرئي ومونتاج إعلاني",
+                p1_2Desc: "فيديوهات ترويجية وإعلانات منصات التواصل الاجتماعي بمستويات احترافية.",
                 secP2Title: "معرض الأعمال (2): الذكاء الاصطناعي والتراث الثقافي",
+                p2_1Title: "تجارب وحلول الذكاء الاصطناعي",
+                p2_1Desc: "تطبيقات عملية ومساعدات ذكية لأتمتة سير العمل والمشاريع الرقمية.",
+                p2_2Title: "التصوير الفني والتراث الجزائري",
+                p2_2Desc: "أرشيف التصوير الفوتوغرافي الفني وتسليط الضوء على المعالم والموروث الثقافي.",
                 secCertTitle: "الشهادات والاعتمادات المهنية",
+                cert1Title: "شهادة إتمام Claude 101",
                 btnVerifyCert: "تحقق من الشهادة",
-                secContactTitle: "تواصل معي مباشرة"
+                c1Title: "الاعتمادات والدبلومات المهنية",
+                c1Desc: "توثيق الخبرات في التصميم الرقمي، التصوير، وإدارة التقنيات الحديثة والذكاء الاصطناعي.",
+                secContactTitle: "تواصل معي والقنوات الرسمية",
+                grpPrimary: "1. المراسلات والتواصل المباشر",
+                grpDev: "2. معارض الأعمال والبرمجة",
+                grpMedia: "3. منصات الفيديو وصناعة المحتوى",
+                grpSocial: "4. الصفحات والمجتمعات الرسمية",
+                b1: "مباشر وسريع", b2: "المراسلات الرسمية", b3: "الهوية المهنية", b3_2: "البريد اللامركزي",
+                b4: "معرض الأعمال", b5: "المشاريع التقنية", b6: "قناة الفيديو", b7: "المقاطع القصيرة", b8: "منصة X",
+                b9: "الملف الشخصي", b10: "الصفحة الرسمية 1", b11: "الصفحة الرسمية 2", b12: "قناة التليجرام", b13: "مجتمع الديسكورد", b14: "منصة 1Tik"
             },
             fr: {
                 dir: "ltr",
@@ -365,63 +449,22 @@
                 btnPortfolio2: "Portfolio 2",
                 btnConsult: "Consultation",
                 secToolsTitle: "Outils et Technologies",
+                skillLighting: "Photographie en Lumière Naturelle",
                 secServicesTitle: "Services Principaux",
+                s1Title: "1. Graphic Design & Visual Communication",
+                s1Desc: "Logo design, visual identity, promotional posters, and social media graphics.",
+                s2Title: "2. Commercial & Field Photography",
+                s2Desc: "Photography for products, farms, livestock, and commercial businesses.",
+                s3Title: "3. Video Editing & Visual Production",
+                s3Desc: "Video editing, social media Reels, sound engineering, and AI-assisted production.",
+                s4Title: "4. Content Creation & Marketing Support",
+                s4Desc: "Content ideas, copywriting, video scripts, and digital publishing plans.",
+                s5Title: "5. Artificial Intelligence & Digital Solutions",
+                s5Desc: "Building custom AI assistants, workflow automation (Make.com), and intelligent agents.",
+                s6Title: "6. Website & Interface Design",
+                s6Desc: "Designing professional websites, landing pages, and digital content structure.",
                 secP1Title: "Portfolio (1) : Projets Professionnels",
-                secP2Title: "Portfolio (2) : IA & Patrimoine",
-                secCertTitle: "Certifications & Diplômes",
-                btnVerifyCert: "Vérifier le certificat",
-                secContactTitle: "Contact Direct"
-            },
-            en: {
-                dir: "ltr",
-                heroTitle: "Said Boustila",
-                heroTagline: "An interdisciplinary creative and digital professional combining artistic experience, modern technologies, and AI.",
-                btnPortfolio: "Portfolio 1",
-                btnPortfolio2: "Portfolio 2",
-                btnConsult: "Request Consultation",
-                secToolsTitle: "Tools & Technologies",
-                secServicesTitle: "Main Professional Services",
-                secP1Title: "Portfolio (1): Professional Projects",
-                secP2Title: "Portfolio (2): AI & Cultural Heritage",
-                secCertTitle: "Certificates & Diplomas",
-                btnVerifyCert: "Verify Certificate",
-                secContactTitle: "Direct Contact"
-            },
-            de: {
-                dir: "ltr",
-                heroTitle: "Said Boustila",
-                heroTagline: "Ein interdisziplinärer Kreativ- und Digitalprofi, der künstlerische Erfahrung, moderne Technologien und KI kombiniert.",
-                btnPortfolio: "Portfolio 1",
-                btnPortfolio2: "Portfolio 2",
-                btnConsult: "Beratung anfordern",
-                secToolsTitle: "Werkzeuge & Technologien",
-                secServicesTitle: "Hauptdienstleistungen",
-                secP1Title: "Portfolio (1): Professionelle Projekte",
-                secP2Title: "Portfolio (2): KI & Erbe",
-                secCertTitle: "Zertifikate & Diplome",
-                btnVerifyCert: "Zertifikat überprüfen",
-                secContactTitle: "Direktkontakt"
-            }
-        };
-
-        function switchLanguage(lang) {
-            const data = translations[lang];
-            document.documentElement.lang = lang;
-            document.documentElement.dir = data.dir;
-
-            document.getElementById('heroTitle').innerText = data.heroTitle;
-            document.getElementById('heroTagline').innerText = data.heroTagline;
-            document.getElementById('btnPortfolio').innerText = data.btnPortfolio;
-            document.getElementById('btnPortfolio2').innerText = data.btnPortfolio2;
-            document.getElementById('btnConsult').innerText = data.btnConsult;
-            document.getElementById('secToolsTitle').innerText = data.secToolsTitle;
-            document.getElementById('secServicesTitle').innerText = data.secServicesTitle;
-            document.getElementById('secP1Title').innerText = data.secP1Title;
-            document.getElementById('secP2Title').innerText = data.secP2Title;
-            document.getElementById('secCertTitle').innerText = data.secCertTitle;
-            document.getElementById('btnVerifyCert').innerText = data.btnVerifyCert;
-            document.getElementById('secContactTitle').innerText = data.secContactTitle;
-        }
-    </script>
-</body>
-</html>
+                p1_1Title: "Identités Visuelles",
+                p1_1Desc: "Conception de logos et d'identités visuelles complètes pour entreprises.",
+                p1_2Title: "Production Vidéo & Montage",
+                p1_2Desc: "Vidéos promotionnelles et publicités pour les réseaux

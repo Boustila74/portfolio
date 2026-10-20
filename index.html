@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>بوسطيلة السعيد | Said Boustila - Portfolio</title>
+    <title>بوسطيلة السعيد | Boustila Said - Portfolio</title>
     <meta name="description" content="الموقع المهني لبوسطيلة السعيد - صناعة المحتوى، التصميم الجرافيكي، التصوير التجاري، المونتاج، والذكاء الاصطناعي.">
     
     <style>
@@ -35,7 +35,7 @@
         header {
             background-color: var(--card-bg);
             border-bottom: 1px solid var(--border-color);
-            padding: 15px 20px;
+            padding: 12px 20px;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -45,9 +45,24 @@
         }
 
         .brand-name {
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+            text-align: start;
+        }
+
+        .brand-name .primary-name {
             font-size: 1.1rem;
             font-weight: bold;
             color: var(--text-main);
+            line-height: 1.2;
+        }
+
+        .brand-name .sub-name {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            font-weight: 500;
+            line-height: 1.2;
         }
 
         .lang-switcher select {
@@ -179,7 +194,10 @@
 <body>
 
     <header>
-        <div class="brand-name" id="headerBrand">بوسطيلة السعيد | Said Boustila</div>
+        <div class="brand-name">
+            <span class="primary-name" id="headerPrimary">بوسطيلة السعيد</span>
+            <span class="sub-name" id="headerSub">Boustila Said</span>
+        </div>
         <div class="lang-switcher">
             <select id="languageSelect" onchange="switchLanguage(this.value)">
                 <option value="ar" selected>العربية (AR)</option>
@@ -226,66 +244,4 @@
                     <p id="s4Desc">ابتكار أفكار المحتوى، كتابة النصوص الإعلانية، وإعداد خطط النشر الرقمي.</p>
                 </div>
                 <div class="card">
-                    <h3 id="s5Title">5. الذكاء الاصطناعي والحلول الرقمية</h3>
-                    <p id="s5Desc">بناء مساعدين ذكيين، أتمتة مهام العمل (Make.com)، وبناء الوكلاء الأذكياء.</p>
-                </div>
-                <div class="card">
-                    <h3 id="s6Title">6. تصميم واجهات ومواقع الويب</h3>
-                    <p id="s6Desc">تصميم المواقع التعريفية، صفحات الهبوط (Landing Pages)، وتنظيم المحتوى الرقمي.</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Portfolio 1 -->
-        <section id="portfolio1">
-            <h2 class="section-title" id="secP1Title">معرض الأعمال (1): المشاريع المهنية والتجارية</h2>
-            <div class="grid">
-                <div class="card">
-                    <h3 id="p1_1Title">هويات بصرية وعلامات تجارية</h3>
-                    <p id="p1_1Desc">نماذج لتصاميم شعارات وهوية بصرية متكاملة للشركات والمشاريع المصغرة.</p>
-                </div>
-                <div class="card">
-                    <h3 id="p1_2Title">إنتاج مرئي ومونتاج إعلاني</h3>
-                    <p id="p1_2Desc">فيديوهات ترويجية وإعلانات منصات التواصل الاجتماعي بمستويات احترافية.</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Portfolio 2 -->
-        <section id="portfolio2">
-            <h2 class="section-title" id="secP2Title">معرض الأعمال (2): الذكاء الاصطناعي والتراث الثقافي</h2>
-            <div class="grid">
-                <div class="card">
-                    <h3 id="p2_1Title">تجارب وحلول الذكاء الاصطناعي</h3>
-                    <p id="p2_1Desc">تطبيقات عملية ومساعدات ذكية لأتمتة سير العمل والمشاريع الرقمية.</p>
-                </div>
-                <div class="card">
-                    <h3 id="p2_2Title">التصوير الفني والتراث الجزائري</h3>
-                    <p id="p2_2Desc">أرشيف التصوير الفوتوغرافي الفني وتسليط الضوء على المعالم والموروث الثقافي.</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Certificates Section -->
-        <section id="certificates">
-            <h2 class="section-title" id="secCertTitle">الشهادات والاعتمادات المهنية</h2>
-            <div class="grid">
-                <div class="card" style="border: 1px solid var(--accent-color);">
-                    <h3 style="color: #ffffff;" id="cert1Title">شهادة إتمام Claude 101</h3>
-                    <p style="color: var(--text-muted); margin-bottom: 12px;">19 أكتوبر 2026 — Anthropic Education</p>
-                    <a href="#" class="btn btn-outline" style="font-size: 0.85rem; padding: 6px 14px; color: #f87171; border-color: #f87171;" id="btnVerifyCert">تحقق من الشهادة</a>
-                </div>
-                <div class="card">
-                    <h3 id="c1Title">الاعتمادات والدبلومات المهنية</h3>
-                    <p id="c1Desc">توثيق الخبرات في التصميم الرقمي، التصوير، وإدارة التقنيات الحديثة والذكاء الاصطناعي.</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Complete Official Contact Section -->
-        <section id="contact">
-            <h2 class="section-title" id="secContactTitle">تواصل معي والقنوات الرسمية</h2>
-            
-            <div class="contact-group-title" id="grpPrimary">1. المراسلات والتواصل المباشر</div>
-            <div class="contact-list">
-                <a href="https://wa.me/213674767958" class="contact-item
+                    <h3 id="s5Title">5. الذكاء الاصطناعي والحلول الرقم

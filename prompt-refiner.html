@@ -16,8 +16,19 @@
             --border-color: #334155;
         }
 
-        * { box-sizing: border-box; margin: 0; padding: 0; font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; }
-        body { background-color: var(--bg-color); color: var(--text-main); padding: 20px; line-height: 1.6; }
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            padding: 20px;
+            line-height: 1.6;
+        }
 
         header {
             max-width: 650px;
@@ -44,50 +55,122 @@
         }
 
         .app-card {
-            max-width: 650px; margin: 0 auto; background: var(--card-bg);
-            border: 1px solid var(--border-color); border-radius: 12px; padding: 25px;
+            max-width: 650px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 25px;
         }
 
-        h2 { color: #60a5fa; margin-bottom: 8px; text-align: center; }
-        p.subtitle { color: var(--text-muted); text-align: center; margin-bottom: 25px; font-size: 0.95rem; }
-
-        .form-group { margin-bottom: 18px; text-align: start; }
-        label { display: block; font-weight: bold; margin-bottom: 8px; }
-
-        input[type="text"], textarea, select {
-            width: 100%; padding: 12px; background: var(--bg-color);
-            border: 1px solid var(--border-color); border-radius: 8px;
-            color: var(--text-main); font-size: 0.95rem; outline: none;
+        h2 {
+            color: #60a5fa;
+            margin-bottom: 8px;
+            text-align: center;
         }
 
-        textarea { height: 90px; resize: vertical; }
+        p.subtitle {
+            color: var(--text-muted);
+            text-align: center;
+            margin-bottom: 25px;
+            font-size: 0.95rem;
+        }
 
-        .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
-
-        .output-box {
-            background: rgba(139, 92, 246, 0.1); border: 1px solid var(--accent-purple);
-            border-radius: 10px; padding: 18px; margin-top: 25px; position: relative;
+        .form-group {
+            margin-bottom: 18px;
             text-align: start;
         }
 
-        .output-title { font-weight: bold; color: #a78bfa; margin-bottom: 10px; font-size: 0.95rem; }
+        label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+
+        input[type="text"], textarea, select {
+            width: 100%;
+            padding: 12px;
+            background: var(--bg-color);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            color: var(--text-main);
+            font-size: 0.95rem;
+            outline: none;
+        }
+
+        textarea {
+            height: 120px;
+            resize: vertical;
+        }
+
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+
+        .output-box {
+            background: rgba(139, 92, 246, 0.1);
+            border: 1px solid var(--accent-purple);
+            border-radius: 10px;
+            padding: 18px;
+            margin-top: 25px;
+            position: relative;
+            text-align: start;
+        }
+
+        .output-title {
+            font-weight: bold;
+            color: #a78bfa;
+            margin-bottom: 10px;
+            font-size: 0.95rem;
+        }
 
         pre {
-            white-space: pre-wrap; word-wrap: break-word; font-family: monospace;
-            background: #090d16; padding: 12px; border-radius: 6px; font-size: 0.9rem; color: #e2e8f0;
-            text-align: left; direction: ltr;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+            font-family: monospace;
+            background: #090d16;
+            padding: 12px;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            color: #e2e8f0;
+            text-align: left;
+            direction: ltr;
         }
 
         .btn-copy {
-            display: block; width: 100%; background: var(--accent-purple); color: white;
-            text-align: center; padding: 12px; border-radius: 8px; text-decoration: none;
-            font-weight: bold; font-size: 0.95rem; margin-top: 15px; border: none; cursor: pointer;
+            display: block;
+            width: 100%;
+            background: var(--accent-purple);
+            color: white;
+            text-align: center;
+            padding: 12px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 0.95rem;
+            margin-top: 15px;
+            border: none;
+            cursor: pointer;
         }
 
-        .btn-copy:hover { opacity: 0.9; }
-        .btn-back { display: block; text-align: center; margin-top: 20px; color: var(--text-muted); text-decoration: none; font-size: 0.9rem; }
+        .btn-copy:hover {
+            opacity: 0.9;
+        }
 
-        [dir="ltr"] pre { text-align: left; }
+        .btn-back {
+            display: block;
+            text-align: center;
+            margin-top: 20px;
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+
+        [dir="ltr"] pre {
+            text-align: left;
+        }
     </style>
 </head>
 <body>
@@ -116,16 +199,252 @@
         <div class="grid-2">
             <div class="form-group">
                 <label for="aiRole" id="labelRole">2. دور الذكاء الاصطناعي :</label>
-                <select id="aiRole" onchange="generatePrompt()">
-                    <!-- يتم تعبئتها ديناميكياً عبر الجافاسكريبت حسب اللغة -->
-                </select>
+                <select id="aiRole" onchange="generatePrompt()"></select>
             </div>
 
             <div class="form-group">
                 <label for="toneStyle" id="labelTone">3. أسلوب ونبرة الطرح :</label>
-                <select id="toneStyle" onchange="generatePrompt()">
-                    <!-- يتم تعبئتها ديناميكياً عبر الجافاسكريبت حسب اللغة -->
-                </select>
+                <select id="toneStyle" onchange="generatePrompt()"></select>
             </div>
         </div>
 
+        <div class="output-box">
+            <div class="output-title" id="outputTitle">الإخراج النهائي:</div>
+            <pre id="promptOutput">سيظهر هنا النص النهائي بعد إدخال الفكرة...</pre>
+            <button class="btn-copy" id="copyButton" onclick="copyPrompt()">نسخ النص</button>
+        </div>
+
+        <a href="index.html" class="btn-back">← العودة إلى الموقع الرئيسي</a>
+    </div>
+
+    <script>
+        const roles = {
+            ar: [
+                "مساعد احترافي",
+                "كاتب محتوى",
+                "مصمم جرافيك",
+                "محلل بيانات",
+                "مطور ويب",
+                "مدير مشروع",
+                "خبير تسويق رقمي",
+                "مترجم",
+                "مساعد ذكاء اصطناعي"
+            ],
+            fr: [
+                "Assistant professionnel",
+                "Rédacteur de contenu",
+                "Designer graphique",
+                "Analyste de données",
+                "Développeur web",
+                "Chef de projet",
+                "Spécialiste marketing digital",
+                "Traducteur",
+                "Assistant IA"
+            ],
+            en: [
+                "Professional assistant",
+                "Content writer",
+                "Graphic designer",
+                "Data analyst",
+                "Web developer",
+                "Project manager",
+                "Digital marketing specialist",
+                "Translator",
+                "AI assistant"
+            ],
+            de: [
+                "Professioneller Assistent",
+                "Content-Autor",
+                "Grafikdesigner",
+                "Datenanalyst",
+                "Webentwickler",
+                "Projektmanager",
+                "Digitaler Marketing-Spezialist",
+                "Übersetzer",
+                "KI-Assistent"
+            ]
+        };
+
+        const tones = {
+            ar: [
+                "احترافي",
+                "إبداعي",
+                "رسمي",
+                "ودود",
+                "حاسم",
+                "تحليلي",
+                "موجز",
+                "مقنع",
+                "ذكي"
+            ],
+            fr: [
+                "Professionnel",
+                "Créatif",
+                "Formel",
+                "Amical",
+                "Décisif",
+                "Analytique",
+                "Concis",
+                "Persuasif",
+                "Intelligent"
+            ],
+            en: [
+                "Professional",
+                "Creative",
+                "Formal",
+                "Friendly",
+                "Decisive",
+                "Analytical",
+                "Concise",
+                "Persuasive",
+                "Smart"
+            ],
+            de: [
+                "Professionell",
+                "Kreativ",
+                "Formal",
+                "Freundlich",
+                "Entscheidend",
+                "Analytisch",
+                "Kurz",
+                "Überzeugend",
+                "Intelligent"
+            ]
+        };
+
+        const translations = {
+            ar: {
+                dir: "rtl",
+                pageTitle: "محسّن البرومبت التفاعلي | بوسطيلة السعيد",
+                appTitle: "🪄 محسّن ومصمم البرومبت الذكي",
+                appSubtitle: "حوّل الفكرة البسيطة إلى أمر (Prompt) احترافي عالي الدقة موجه للذكاء الاصطناعي",
+                labelTopic: "1. الفكرة الأساسية أو الطلب :",
+                labelRole: "2. دور الذكاء الاصطناعي :",
+                labelTone: "3. أسلوب ونبرة الطرح :",
+                outputTitle: "الإخراج النهائي:",
+                copyButton: "نسخ النص",
+                backLink: "← العودة إلى الموقع الرئيسي"
+            },
+            fr: {
+                dir: "ltr",
+                pageTitle: "Améliorateur de prompt interactif | Boustila Said",
+                appTitle: "🪄 Assistant IA & Générateur de Prompt",
+                appSubtitle: "Transformez une idée simple en un prompt professionnel précis pour l'IA",
+                labelTopic: "1. Idée principale ou demande :",
+                labelRole: "2. Rôle de l'IA :",
+                labelTone: "3. Style et ton :",
+                outputTitle: "Sortie finale :",
+                copyButton: "Copier le texte",
+                backLink: "← Retour au site principal"
+            },
+            en: {
+                dir: "ltr",
+                pageTitle: "Interactive Prompt Refiner | Boustila Said",
+                appTitle: "🪄 Smart Prompt Refiner",
+                appSubtitle: "Turn a simple idea into a precise and professional prompt for AI",
+                labelTopic: "1. Core idea or request:",
+                labelRole: "2. AI role:",
+                labelTone: "3. Tone and style:",
+                outputTitle: "Final output:",
+                copyButton: "Copy text",
+                backLink: "← Back to main site"
+            },
+            de: {
+                dir: "ltr",
+                pageTitle: "Interaktiver Prompt-Verbesserer | Boustila Said",
+                appTitle: "🪄 Intelligenter Prompt-Verbesserer",
+                appSubtitle: "Wandeln Sie eine einfache Idee in einen präzisen professionellen Prompt für KI um",
+                labelTopic: "1. Grundidee oder Anfrage:",
+                labelRole: "2. Rolle der KI:",
+                labelTone: "3. Stil und Ton:",
+                outputTitle: "الناتج النهائي:",
+                copyButton: "Text kopieren",
+                backLink: "← Zurück zur Hauptseite"
+            }
+        };
+
+        function populateSelect(selectElement, items, selectedIndex = 0) {
+            selectElement.innerHTML = "";
+            items.forEach((item, index) => {
+                const option = document.createElement("option");
+                option.value = item;
+                option.textContent = item;
+                if (index === selectedIndex) option.selected = true;
+                selectElement.appendChild(option);
+            });
+        }
+
+        function switchLanguage(lang) {
+            const data = translations[lang];
+            if (!data) return;
+
+            document.documentElement.lang = lang;
+            document.documentElement.dir = data.dir;
+            document.title = data.pageTitle;
+
+            document.getElementById("headerBrand").textContent = "بوسطيلة السعيد";
+            document.getElementById("appTitle").textContent = data.appTitle;
+            document.getElementById("appSubtitle").textContent = data.appSubtitle;
+            document.getElementById("labelTopic").textContent = data.labelTopic;
+            document.getElementById("labelRole").textContent = data.labelRole;
+            document.getElementById("labelTone").textContent = data.labelTone;
+            document.getElementById("outputTitle").textContent = data.outputTitle;
+            document.getElementById("copyButton").textContent = data.copyButton;
+
+            const pageBackLink = document.querySelector(".btn-back");
+            if (pageBackLink) pageBackLink.textContent = data.backLink;
+
+            populateSelect(document.getElementById("aiRole"), roles[lang], 0);
+            populateSelect(document.getElementById("toneStyle"), tones[lang], 0);
+            generatePrompt();
+        }
+
+        function generatePrompt() {
+            const topic = document.getElementById("userTopic").value.trim();
+            const role = document.getElementById("aiRole").value || "مساعد احترافي";
+            const tone = document.getElementById("toneStyle").value || "احترافي";
+
+            if (!topic) {
+                document.getElementById("promptOutput").textContent = "سيظهر هنا النص النهائي بعد إدخال الفكرة...";
+                return;
+            }
+
+            const prompt = `
+أنت ${role}.
+اكتب لي بشكل احترافي ومفصل، بأسلوب ${tone}، مع مراعاة التالي:
+- هدف المهمة: ${topic}
+- النتائج المرجوة: قدم إجابة واضحة ومفيدة ومنظمة.
+- الجودة: استخدم أسلوب دقيق، مفهوم، ومباشر.
+- الشكل: أجب بشكل منظم، مع نقاط رئيسية وعناصر قابلة للتنفيذ.
+- الإخراج: اجعل الإجابة مناسبة للغرض المحدد وموثوقة ومفيدة.
+`;
+
+            document.getElementById("promptOutput").textContent = prompt.trim();
+        }
+
+        function copyPrompt() {
+            const output = document.getElementById("promptOutput").textContent;
+            if (!output) return;
+
+            navigator.clipboard.writeText(output)
+                .then(() => {
+                    const button = document.getElementById("copyButton");
+                    button.textContent = "تم النسخ";
+                    setTimeout(() => {
+                        button.textContent = document.getElementById("copyButton").dataset.originalText || "نسخ النص";
+                    }, 1500);
+                })
+                .catch(() => {
+                    alert("حدث خطأ أثناء النسخ. جرّب مرة أخرى.");
+                });
+        }
+
+        document.addEventListener("DOMContentLoaded", function() {
+            populateSelect(document.getElementById("aiRole"), roles.ar, 0);
+            populateSelect(document.getElementById("toneStyle"), tones.ar, 0);
+            document.getElementById("copyButton").dataset.originalText = "نسخ النص";
+            generatePrompt();
+        });
+    </script>
+</body>
+</html>

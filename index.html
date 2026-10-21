@@ -1,882 +1,394 @@
-<!DOCTYPE html>
-<html lang="ar" dir="rtl">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>بوسطيلة السعيد | Boustila Said - Portfolio</title>
-  <meta
-    name="description"
-    content="الموقع المهني لبوسطيلة السعيد - صناعة المحتوى، التصميم الجرافيكي، التصوير التجاري، المونتاج، والذكاء الاصطناعي."
-  />
-  <style>
-    :root {
-      --bg-color: #0f172a;
-      --bg-soft: #111827;
-      --card-bg: #1e293b;
-      --card-alt: #162033;
-      --accent-color: #2563eb;
-      --accent-green: #10b981;
-      --accent-purple: #8b5cf6;
-      --accent-cyan: #06b6d4;
-      --text-main: #f8fafc;
-      --text-muted: #94a3b8;
-      --border-color: #334155;
-      --shadow: 0 20px 40px rgba(0, 0, 0, 0.18);
-      --shadow-soft: 0 10px 24px rgba(37, 99, 235, 0.22);
+<script>
+  const T = {
+    ar: {
+      name: "السعيد بوسطيلة",
+      title: "السعيد بوسطيلة — مصمم جرافيك ومصوّر ومبدع محتوى",
+      desc: "شريك إبداعي ورقمي من الجزائر: تصميم جرافيك وتصوير ومونتاج ومحتوى وحلول بالذكاء الاصطناعي وتصميم مواقع.",
+      nav: ["الخدمات", "الأعمال", "الذكاء الاصطناعي", "نبذة", "تواصل"],
+      tag: "مصمم جرافيك · مصوّر فوتوغرافي · مبدع محتوى — الجزائر",
+      h1: "شريك إبداعي ورقمي يحوّل الأفكار إلى حلول عملية",
+      lead: "يجمع بين الخبرة الفنية والتقنيات الحديثة لفهم احتياجات مشروعك، ثم يقترح لك ما يناسبك.",
+      bw: "شاهد الأعمال",
+      bc: "اطلب استشارة",
+      svh: "الخدمات المهنية",
+      s1: "التصميم الجرافيكي والإعلانات",
+      s2: "التصوير الفوتوغرافي التجاري",
+      s3: "المونتاج والإنتاج المرئي",
+      s4: "صناعة المحتوى والتخطيط التسويقي",
+      s5: "حلول الذكاء الاصطناعي والوكلاء",
+      s6: "تصميم صفحات الويب والمواقع",
+      d1: "تصميم الشعارات والملصقات والإعلانات ومنشورات التواصل، ومعالجة الصور وتجهيزها للطباعة.",
+      d2: "تصوير المنتجات والحيوانات والمزارع والمحلات والأنشطة، ومعالجة الصور للاستخدام التسويقي.",
+      d3: "مونتاج الإعلانات والمقاطع القصيرة، وتصحيح الألوان، وتحريك الصور، وتجارب الفيديو بالذكاء الاصطناعي.",
+      d4: "أفكار المنشورات والحملات، وخطط المحتوى، والنصوص الإعلانية، وسيناريوهات الفيديو، وتدريب أصحاب الأنشطة.",
+      d5: "مساعدون أذكياء بتعليمات مخصصة، ووكلاء ينفذون مهام متعددة، وإرشاد عملي.",
+      d6: "صفحات تعريفية ومواقع متعددة الصفحات، وتجهيزها للنشر.",
+      wh: "مختارات من الأعمال",
+      wsoon: "الأعمال الحقيقية قيد التنظيم والإضافة قريباً لضمان أعلى جودة عرض.",
+      dm1: "تصميم وإعلانات",
+      dm2: "تصوير فوتوغرافي",
+      dm3: "مونتاج وإنتاج مرئي",
+      dm4: "ذكاء اصطناعي وتجارب",
+      aih: "الذكاء الاصطناعي والحلول الرقمية",
+      aip: "أستخدم الذكاء الاصطناعي أداةً لتوسيع قدراتي وتحسين النتائج، لا بديلًا عن الهوية المهنية.",
+      ai1: "مشروعات شخصية وتجريبية، تُميَّز عن أعمال العملاء",
+      ai2: "مساعدون ووكلاء أذكياء: وظيفة كل واحد منها ومهامه",
+      ai3: "تجارب تفاعلية للتجربة من الهاتف: قريبًا",
+      exh: "الخبرة",
+      e1: "سنة تصوير",
+      e2: "سنة مونتاج",
+      e3: "سنوات تصميم جرافيك",
+      e4: "تصميم المواقع منذ",
+      e5: "سنوات ذكاء اصطناعي",
+      cth: "الشهادات",
+      cc1: "شهادة إتمام Claude 101",
+      cc2: "Anthropic Education — 19 أكتوبر 2026",
+      cv_pending: "رابط التحقق الرسمي قيد التجهيز",
+      kh: "لديك مشروع؟ لنتحدث",
+      kp: "الأسعار وآجال التسليم تُحدَّد بالاتفاق مع كل عميل بعد فهم احتياجاته.",
+      fn: "الاسم",
+      fc: "وسيلة التواصل",
+      fs: "نوع الخدمة",
+      fd: "وصف المشروع",
+      fb: "الميزانية التقريبية (اختياري)",
+      fl: "روابط مرجعية (اختياري)",
+      fw: "إرسال عبر واتساب",
+      fm: "إرسال عبر البريد",
+      fe: "يرجى كتابة الاسم ووصف المشروع.",
+      g1: "تواصل سريع",
+      g2: "البريد الإلكتروني",
+      g3: "مهني",
+      g4: "الأعمال الإبداعية",
+      g5: "المنصات الاجتماعية",
+      g6: "منصات إضافية",
+      opt_other: "أخرى",
+      pt: "لا يستخدم هذا الموقع ملفات تعريف الارتباط ولا أدوات تتبع، ولا يخزّن النموذج بياناتك: هو يجهّز رسالة ترسلها أنت بنفسك عبر واتساب أو البريد.",
+      ft: "© 2026 السعيد بوسطيلة — جميع الحقوق محفوظة",
+      submit_ok: "تم تجهيز الرسالة بنجاح.",
+      invalid: "يرجى ملء الاسم ووصف المشروع على الأقل."
+    },
+    en: {
+      name: "Said Boustila",
+      title: "Said Boustila — Graphic Designer, Photographer & Content Creator",
+      desc: "A creative and digital partner from Algeria: graphic design, photography, video editing, content, AI solutions and web design.",
+      nav: ["Services", "Work", "AI", "About", "Contact"],
+      tag: "Graphic designer · Photographer · Content creator — Algeria",
+      h1: "A creative and digital partner turning ideas into practical solutions",
+      lead: "Combining artistic expertise with modern technology to understand your project needs and propose the right solution.",
+      bw: "View work",
+      bc: "Request a consultation",
+      svh: "Professional services",
+      s1: "Graphic design & advertising",
+      s2: "Commercial photography",
+      s3: "Video editing & production",
+      s4: "Content & marketing planning",
+      s5: "AI solutions & agents",
+      s6: "Web design",
+      d1: "Logos, posters, ads and social media posts; photo retouching and print-ready files.",
+      d2: "Product, animal, farm, shop and activity photography; marketing retouching.",
+      d3: "Editing of ads and short clips, color correction, motion graphics and AI video experiments.",
+      d4: "Content ideas, campaign planning, ad copy, video scripts and coaching for business owners.",
+      d5: "Custom AI assistants, multi-task agents and practical guidance.",
+      d6: "Landing pages and multi-page websites ready for deployment.",
+      wh: "Selected work",
+      wsoon: "Real projects are being organized and added soon to present the portfolio with higher quality.",
+      dm1: "Design & ads",
+      dm2: "Photography",
+      dm3: "Video editing",
+      dm4: "AI experiments",
+      aih: "AI and digital solutions",
+      aip: "I use AI as a tool to extend my capabilities while keeping my professional identity intact.",
+      ai1: "Personal and experimental projects, distinct from client work",
+      ai2: "Smart assistants and agents with defined roles and tasks",
+      ai3: "Interactive mobile-first experiences: coming soon",
+      exh: "Experience",
+      e1: "years of photography",
+      e2: "years of video editing",
+      e3: "years of graphic design",
+      e4: "web design since",
+      e5: "years of AI",
+      cth: "Certificates",
+      cc1: "Claude 101 Completion Certificate",
+      cc2: "Anthropic Education — October 19, 2026",
+      cv_pending: "Official verification link is being prepared",
+      kh: "Have a project? Let's talk",
+      kp: "Pricing and delivery times are defined after understanding the client’s needs and scope.",
+      fn: "Name",
+      fc: "Contact method",
+      fs: "Service type",
+      fd: "Project description",
+      fb: "Estimated budget (optional)",
+      fl: "Reference links (optional)",
+      fw: "Send via WhatsApp",
+      fm: "Send via email",
+      fe: "Please enter your name and project description.",
+      g1: "Quick contact",
+      g2: "Email",
+      g3: "Professional",
+      g4: "Creative work",
+      g5: "Social platforms",
+      g6: "Additional platforms",
+      opt_other: "Other",
+      pt: "This site does not use cookies or tracking scripts, and it does not store your data. It only prepares a message you send yourself through WhatsApp or email.",
+      ft: "© 2026 Said Boustila — All rights reserved",
+      submit_ok: "Message prepared successfully.",
+      invalid: "Please complete the name and project description."
+    },
+    fr: {
+      name: "Said Boustila",
+      title: "Said Boustila — Graphiste, Photographe & Créateur de contenu",
+      desc: "Un partenaire créatif et digital d’Algérie : design graphique, photographie, montage, contenu, IA et design web.",
+      nav: ["Services", "Travaux", "IA", "À propos", "Contact"],
+      tag: "Graphiste · Photographe · Créateur de contenu — Algérie",
+      h1: "Un partenaire créatif et digital qui transforme les idées en solutions concrètes",
+      lead: "En combinant l’expertise artistique avec les technologies modernes pour comprendre vos besoins et proposer le bon plan.",
+      bw: "Voir les travaux",
+      bc: "Demander un devis",
+      svh: "Services professionnels",
+      s1: "Design graphique & publicité",
+      s2: "Photographie commerciale",
+      s3: "Montage vidéo & production",
+      s4: "Contenu & planification marketing",
+      s5: "Solutions IA & agents",
+      s6: "Design web",
+      d1: "Logo, affiches, publicités et publications sociales; retouche et fichiers prêts pour l’impression.",
+      d2: "Photographie de produits, animaux, fermes, magasins et activités; retouche pour le marketing.",
+      d3: "Montage de publicités et courts clips, correction des couleurs, motion design et expérimentations vidéo IA.",
+      d4: "Idées de contenus, campagnes, textes publicitaires, scripts vidéo et accompagnement des entrepreneurs.",
+      d5: "Assistants IA personnalisés, agents multifonctions et conseils pratiques.",
+      d6: "Pages de présentation et sites multi-pages prêts au déploiement.",
+      wh: "Travaux sélectionnés",
+      wsoon: "Les projets réels sont en cours d’organisation et seront ajoutés bientôt pour présenter un portfolio plus fort.",
+      dm1: "Design & publicité",
+      dm2: "Photographie",
+      dm3: "Montage vidéo",
+      dm4: "Expériences IA",
+      aih: "IA et solutions digitales",
+      aip: "J’utilise l’IA comme outil pour élargir mes capacités sans remplacer mon identité professionnelle.",
+      ai1: "Projets personnels et expérimentaux, distincts du travail client",
+      ai2: "Assistants intelligents et agents avec rôles et missions définis",
+      ai3: "Expériences interactives mobiles : bientôt",
+      exh: "Expérience",
+      e1: "ans de photographie",
+      e2: "ans de montage vidéo",
+      e3: "ans de design graphique",
+      e4: "design web depuis",
+      e5: "ans d’IA",
+      cth: "Certifications",
+      cc1: "Certificat de complétion Claude 101",
+      cc2: "Anthropic Education — 19 octobre 2026",
+      cv_pending: "Le lien officiel de vérification est en cours de préparation",
+      kh: "Vous avez un projet ? Parlons-en",
+      kp: "Les prix et délais sont définis après compréhension des besoins du client.",
+      fn: "Nom",
+      fc: "Moyen de contact",
+      fs: "Type de service",
+      fd: "Description du projet",
+      fb: "Budget estimé (facultatif)",
+      fl: "Liens de référence (facultatif)",
+      fw: "Envoyer via WhatsApp",
+      fm: "Envoyer via e-mail",
+      fe: "Veuillez indiquer votre nom et la description du projet.",
+      g1: "Contact rapide",
+      g2: "E-mail",
+      g3: "Professionnel",
+      g4: "Travail créatif",
+      g5: "Réseaux sociaux",
+      g6: "Plateformes supplémentaires",
+      opt_other: "Autre",
+      pt: "Ce site n’utilise ni cookies ni outils de tracking et ne stocke pas vos données. Il prépare uniquement le message que vous envoyez vous-même par WhatsApp ou e-mail.",
+      ft: "© 2026 Said Boustila — Tous droits réservés",
+      submit_ok: "Message préparé avec succès.",
+      invalid: "Veuillez remplir le nom et la description du projet."
+    },
+    de: {
+      name: "Said Boustila",
+      title: "Said Boustila — Grafikdesigner, Fotograf & Content Creator",
+      desc: "Ein kreativer digitaler Partner aus Algerien: Grafikdesign, Fotografie, Videoediting, Content, KI-Lösungen und Webdesign.",
+      nav: ["Dienstleistungen", "Arbeiten", "KI", "Über mich", "Kontakt"],
+      tag: "Grafikdesigner · Fotograf · Content Creator — Algerien",
+      h1: "Ein kreativer und digitaler Partner, der Ideen in praktische Lösungen verwandelt",
+      lead: "Durch die Kombination aus künstlerischer Expertise und moderner Technologie verstehe ich Ihre Projektanforderungen und schlage die passende Lösung vor.",
+      bw: "Projekte ansehen",
+      bc: "Beratung anfragen",
+      svh: "Professionelle Dienstleistungen",
+      s1: "Grafikdesign & Werbung",
+      s2: "Kommerzielle Fotografie",
+      s3: "Videoediting & Produktion",
+      s4: "Content & Marketingplanung",
+      s5: "KI-Lösungen & Agenten",
+      s6: "Webdesign",
+      d1: "Logos, Poster, Anzeigen und Social-Media-Posts; Bildretusche und druckfertige Dateien.",
+      d2: "Produkt-, Tier-, Farm-, Laden- und Aktivitätsfotografie; Retusche für Marketingzwecke.",
+      d3: "Bearbeitung von Anzeigen und kurzen Videos, Farbkorrektur, Motion Graphics und KI-Videoexperimente.",
+      d4: "Content-Ideen, Kampagnenplanung, Werbetexte, Videoskripte und Coaching für Unternehmer.",
+      d5: "Personalisierte KI-Assistenten, Multi-Task-Agenten und praktische Beratung.",
+      d6: "Landing Pages und mehrseitige Websites, bereit für den Einsatz.",
+      wh: "Ausgewählte Arbeiten",
+      wsoon: "Echte Projekte werden derzeit organisiert und bald ergänzt, damit das Portfolio hochwertiger präsentiert wird.",
+      dm1: "Design & Werbung",
+      dm2: "Fotografie",
+      dm3: "Videoediting",
+      dm4: "KI-Experimente",
+      aih: "KI und digitale Lösungen",
+      aip: "Ich nutze KI als Werkzeug, um meine Fähigkeiten zu erweitern, ohne meine professionelle Identität zu verlieren.",
+      ai1: "Persönliche und experimentelle Projekte, getrennt von Kundenarbeiten",
+      ai2: "Intelligente Assistenten und Agenten mit klaren Rollen und Aufgaben",
+      ai3: "Interaktive mobile Erlebnisse: bald verfügbar",
+      exh: "Erfahrung",
+      e1: "Jahre Fotografie",
+      e2: "Jahre Videoediting",
+      e3: "Jahre Grafikdesign",
+      e4: "Webdesign seit",
+      e5: "Jahre KI",
+      cth: "Zertifikate",
+      cc1: "Claude 101 Abschlusszertifikat",
+      cc2: "Anthropic Education — 19. Oktober 2026",
+      cv_pending: "Der offizielle Verifizierungslink wird vorbereitet",
+      kh: "Sie haben ein Projekt? Lass uns sprechen",
+      kp: "Preise und Lieferzeiten werden nach dem Verständnis der Anforderungen des Kunden festgelegt.",
+      fn: "Name",
+      fc: "Kontaktmethode",
+      fs: "Dienstleistung",
+      fd: "Projektbeschreibung",
+      fb: "Geschätztes Budget (optional)",
+      fl: "Referenzlinks (optional)",
+      fw: "Per WhatsApp senden",
+      fm: "Per E-Mail senden",
+      fe: "Bitte geben Sie Ihren Namen und Ihre Projektbeschreibung ein.",
+      g1: "Schnellkontakt",
+      g2: "E-Mail",
+      g3: "Beruflich",
+      g4: "Kreative Arbeiten",
+      g5: "Social-Media-Plattformen",
+      g6: "Zusätzliche Plattformen",
+      opt_other: "Andere",
+      pt: "Diese Website verwendet keine Cookies oder Tracking-Tools und speichert Ihre Daten nicht. Sie erstellt nur eine Nachricht, die Sie selbst über WhatsApp oder E-Mail senden.",
+      ft: "© 2026 Said Boustila — Alle Rechte vorbehalten",
+      submit_ok: "Nachricht erfolgreich vorbereitet.",
+      invalid: "Bitte füllen Sie Name und Projektbeschreibung aus."
+    }
+  };
+
+  const pageTitle = document.getElementById("page-title");
+  const pageDesc = document.getElementById("page-desc");
+  const langButtons = document.querySelectorAll("[data-lang]");
+  const langMap = {
+    ar: "ar",
+    en: "en",
+    fr: "fr",
+    de: "de"
+  };
+
+  function applyLanguage(lang) {
+    const current = T[langMap[lang]] || T.ar;
+
+    document.documentElement.lang = lang;
+    document.documentElement.dir = lang === "ar" ? "rtl" : "ltr";
+
+    if (pageTitle) {
+      pageTitle.textContent = current.title;
+    }
+    if (pageDesc) {
+      pageDesc.setAttribute("content", current.desc);
     }
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      background:
-        radial-gradient(circle at top, rgba(37, 99, 235, 0.14), transparent 25%),
-        radial-gradient(circle at bottom left, rgba(16, 185, 129, 0.08), transparent 30%),
-        var(--bg-color);
-      color: var(--text-main);
-      line-height: 1.7;
-      padding-bottom: 40px;
-      min-height: 100vh;
-    }
-
-    a {
-      text-decoration: none;
-    }
-
-    header {
-      background: rgba(15, 23, 42, 0.82);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-      border-bottom: 1px solid rgba(148, 163, 184, 0.15);
-      padding: 14px 20px;
-      position: sticky;
-      top: 0;
-      z-index: 999;
-    }
-
-    .header-inner {
-      max-width: 1100px;
-      margin: 0 auto;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 16px;
-    }
-
-    .brand-name {
-      display: flex;
-      flex-direction: column;
-      gap: 2px;
-      text-align: start;
-    }
-
-    .brand-name .primary-name {
-      font-size: 1.12rem;
-      font-weight: 800;
-      color: var(--text-main);
-      line-height: 1.2;
-    }
-
-    .brand-name .sub-name {
-      font-size: 0.84rem;
-      color: var(--text-muted);
-      font-weight: 500;
-      line-height: 1.2;
-    }
-
-    .lang-switcher select {
-      background: rgba(17, 24, 39, 0.95);
-      color: var(--text-main);
-      border: 1px solid rgba(148, 163, 184, 0.25);
-      border-radius: 10px;
-      padding: 9px 12px;
-      font-size: 0.9rem;
-      outline: none;
-      box-shadow: var(--shadow-soft);
-      transition: 0.2s ease;
-    }
-
-    .lang-switcher select:focus {
-      border-color: rgba(96, 165, 250, 0.8);
-      box-shadow: 0 0 0 3px rgba(96, 165, 250, 0.18);
-    }
-
-    .container {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 24px 20px 0;
-    }
-
-    .hero {
-      text-align: center;
-      padding: 70px 18px 44px;
-      border-bottom: 1px solid rgba(148, 163, 184, 0.15);
-    }
-
-    .hero h1 {
-      font-size: clamp(2rem, 4vw, 3rem);
-      margin-bottom: 12px;
-      color: #ffffff;
-      font-weight: 800;
-      letter-spacing: -0.04em;
-      animation: fadeUp 0.8s ease both;
-    }
-
-    .hero p.tagline {
-      font-size: 1.08rem;
-      color: var(--text-muted);
-      max-width: 780px;
-      margin: 0 auto 30px;
-      animation: fadeUp 0.9s ease both;
-    }
-
-    .hero-actions {
-      display: flex;
-      gap: 12px;
-      justify-content: center;
-      flex-wrap: wrap;
-      animation: fadeUp 1.1s ease both;
-    }
-
-    .btn {
-      position: relative;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-      padding: 12px 18px;
-      border-radius: 12px;
-      font-weight: 700;
-      font-size: 0.95rem;
-      transition: all 0.25s ease;
-      box-shadow: var(--shadow-soft);
-      overflow: hidden;
-      isolation: isolate;
-      cursor: pointer;
-      border: none;
-      text-align: center;
-      user-select: none;
-      transform: translateY(0);
-    }
-
-    .btn::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(120deg, rgba(255,255,255,0.22), rgba(255,255,255,0) 35%, rgba(255,255,255,0.1));
-      transform: translateX(-120%);
-      transition: transform 0.7s ease;
-      z-index: -1;
-    }
-
-    .btn:hover {
-      transform: translateY(-3px) scale(1.01);
-      box-shadow: 0 18px 32px rgba(15,23,42,0.35);
-    }
-
-    .btn:hover::before {
-      transform: translateX(120%);
-    }
-
-    .btn:active {
-      transform: translateY(-1px) scale(0.99);
-    }
-
-    .btn-primary {
-      background: linear-gradient(135deg, var(--accent-color), #3b82f6);
-      color: #fff;
-    }
-
-    .btn-secondary {
-      background: linear-gradient(135deg, var(--accent-green), #34d399);
-      color: #fff;
-    }
-
-    .btn-calc {
-      background: linear-gradient(135deg, var(--accent-purple), #a78bfa);
-      color: #fff;
-    }
-
-    .btn-prompt {
-      background: linear-gradient(135deg, #0284c7, #38bdf8);
-      color: #fff;
-    }
-
-    .btn-outline {
-      background: rgba(15, 23, 42, 0.2);
-      color: var(--text-main);
-      border: 1px solid var(--border-color);
-    }
-
-    .btn-outline:hover {
-      border-color: rgba(96, 165, 250, 0.8);
-      background: rgba(96, 165, 250, 0.08);
-    }
-
-    .pulse {
-      animation: pulseGlow 2s infinite ease-in-out;
-    }
-
-    .section-title {
-      font-size: clamp(1.3rem, 2vw, 1.8rem);
-      margin: 44px 0 20px;
-      border-right: 4px solid var(--accent-color);
-      padding-right: 12px;
-      font-weight: 800;
-      letter-spacing: -0.03em;
-    }
-
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 22px;
-    }
-
-    .card {
-      background: linear-gradient(180deg, var(--card-bg), var(--card-alt));
-      border: 1px solid var(--border-color);
-      border-radius: 14px;
-      padding: 22px;
-      box-shadow: var(--shadow);
-      transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .card::after {
-      content: "";
-      position: absolute;
-      inset: auto -30% -50% auto;
-      width: 140px;
-      height: 140px;
-      background: radial-gradient(circle, rgba(96,165,250,0.12), transparent 65%);
-      pointer-events: none;
-    }
-
-    .card:hover {
-      transform: translateY(-2px);
-      border-color: rgba(96, 165, 250, 0.7);
-      box-shadow: 0 22px 40px rgba(15, 23, 42, 0.28);
-    }
-
-    .card h3 {
-      font-size: 1.12rem;
-      margin-bottom: 10px;
-      color: #60a5fa;
-      font-weight: 700;
-    }
-
-    .card p {
-      font-size: 0.96rem;
-      color: var(--text-muted);
-    }
-
-    .contact-group-title {
-      font-size: 1.08rem;
-      color: #60a5fa;
-      margin: 26px 0 12px;
-      font-weight: 700;
-    }
-
-    .contact-list {
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-    }
-
-    .contact-item {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      background: linear-gradient(180deg, var(--card-bg), var(--card-alt));
-      padding: 12px 16px;
-      border-radius: 10px;
-      border: 1px solid var(--border-color);
-      color: var(--text-main);
-      transition: 0.2s ease;
-      box-shadow: inset 0 0 0 rgba(0,0,0,0);
-    }
-
-    .contact-item:hover {
-      border-color: rgba(96, 165, 250, 0.7);
-      transform: translateY(-1px);
-      box-shadow: 0 12px 24px rgba(15, 23, 42, 0.2);
-    }
-
-    .contact-item span.label {
-      font-weight: 700;
-      font-size: 0.95rem;
-    }
-
-    .contact-item span.badge {
-      font-size: 0.8rem;
-      padding: 5px 8px;
-      border-radius: 6px;
-      background: rgba(148, 163, 184, 0.12);
-      color: var(--text-muted);
-      white-space: nowrap;
-    }
-
-    [dir="ltr"] .section-title {
-      border-right: none;
-      border-left: 4px solid var(--accent-color);
-      padding-right: 0;
-      padding-left: 12px;
-    }
-
-    @keyframes fadeUp {
-      0% {
-        opacity: 0;
-        transform: translateY(18px);
+    document.querySelectorAll("[data-i18n]").forEach(el => {
+      const key = el.dataset.i18n;
+      if (current[key]) {
+        el.textContent = current[key];
       }
-      100% {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    @keyframes pulseGlow {
-      0%, 100% {
-        box-shadow: 0 0 0 rgba(37, 99, 235, 0), 0 0 0 rgba(59,130,246,0);
-      }
-      50% {
-        box-shadow: 0 0 26px rgba(59, 130, 246, 0.28), 0 0 44px rgba(96, 165, 250, 0.12);
-      }
-    }
-
-    @media (max-width: 600px) {
-      .header-inner {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-
-      .hero {
-        padding-top: 44px;
-      }
-
-      .hero-actions {
-        justify-content: flex-start;
-      }
-
-      .btn {
-        width: 100%;
-      }
-    }
-  </style>
-</head>
-<body>
-  <header>
-    <div class="header-inner">
-      <div class="brand-name">
-        <span class="primary-name" id="headerPrimary">بوسطيلة السعيد</span>
-        <span class="sub-name" id="headerSub">Boustila Said</span>
-      </div>
-
-      <div class="lang-switcher">
-        <select id="languageSelect" aria-label="language selector">
-          <option value="ar" selected>العربية (AR)</option>
-          <option value="fr">Français (FR)</option>
-          <option value="en">English (EN)</option>
-          <option value="de">Deutsch (DE)</option>
-        </select>
-      </div>
-    </div>
-  </header>
-
-  <div class="container">
-    <section class="hero">
-      <h1 id="heroTitle">بوسطيلة السعيد</h1>
-      <p class="tagline" id="heroTagline">
-        محترف متعدد التخصصات يجمع بين الخبرة الفنية، التقنيات الحديثة، والذكاء الاصطناعي لفهم احتياجات العملاء وتقديم حلول عملية ومبتكرة.
-      </p>
-
-      <div class="hero-actions">
-        <a href="#portfolio1" class="btn btn-primary pulse" id="btnPortfolio">معرض الأعمال 1</a>
-        <a href="#portfolio2" class="btn btn-outline" id="btnPortfolio2">معرض الأعمال 2</a>
-        <a href="estimator.html" class="btn btn-calc pulse" id="btnEstimator">🧮 حاسبة التكلفة التقديرية</a>
-        <a href="prompt-refiner.html" class="btn btn-prompt pulse" id="btnPromptTool">🪄 محسّن البرومبت الذكي</a>
-        <a href="https://wa.me/213674767958" class="btn btn-secondary" id="btnConsult" target="_blank" rel="noopener noreferrer">طلب استشارة خاصة</a>
-      </div>
-    </section>
-
-    <section id="services">
-      <h2 class="section-title" id="secServicesTitle">الخدمات المهنية الرئيسية</h2>
-      <div class="grid">
-        <div class="card">
-          <h3 id="s1Title">1. التصميم الجرافيكي والتواصل البصري</h3>
-          <p id="s1Desc">تصميم الشعارات، الهويات البصرية، الملصقات الإعلانية، وتصاميم وسائل التواصل الاجتماعي.</p>
-        </div>
-        <div class="card">
-          <h3 id="s2Title">2. التصوير التجاري والإنتاجي</h3>
-          <p id="s2Desc">تصوير المنتجات، المزارع، المواشي، والمشاريع التجارية لخدمة الأهداف التسويقية.</p>
-        </div>
-        <div class="card">
-          <h3 id="s3Title">3. المونتاج والإنتاج المرئي</h3>
-          <p id="s3Desc">تعديل الفيديوهات، مقاطع Reels، الهندسة الصوتية، والإنتاج المعزز بالذكاء الاصطناعي.</p>
-        </div>
-        <div class="card">
-          <h3 id="s4Title">4. صناعة المحتوى والدعم التسويقي</h3>
-          <p id="s4Desc">ابتكار أفكار المحتوى، كتابة النصوص الإعلانية، وإعداد خطط النشر الرقمي.</p>
-        </div>
-        <div class="card">
-          <h3 id="s5Title">5. الذكاء الاصطناعي والحلول الرقمية</h3>
-          <p id="s5Desc">بناء مساعدين ذكيين، أتمتة مهام العمل (Make.com)، وبناء الوكلاء الأذكياء.</p>
-        </div>
-        <div class="card">
-          <h3 id="s6Title">6. تصميم واجهات ومواقع الويب</h3>
-          <p id="s6Desc">تصميم المواقع التعريفية، صفحات الهبوط (Landing Pages)، وتنظيم المحتوى الرقمي.</p>
-        </div>
-      </div>
-    </section>
-
-    <section id="portfolio1">
-      <h2 class="section-title" id="secP1Title">معرض الأعمال (1): المشاريع المهنية والتجارية</h2>
-      <div class="grid">
-        <div class="card">
-          <h3 id="p1_1Title">هويات بصرية وعلامات تجارية</h3>
-          <p id="p1_1Desc">نماذج لتصاميم شعارات وهوية بصرية متكاملة للشركات والمشاريع المصغرة.</p>
-        </div>
-        <div class="card">
-          <h3 id="p1_2Title">إنتاج مرئي ومونتاج إعلاني</h3>
-          <p id="p1_2Desc">فيديوهات ترويجية وإعلانات منصات التواصل الاجتماعي بمستويات احترافية.</p>
-        </div>
-      </div>
-    </section>
-
-    <section id="portfolio2">
-      <h2 class="section-title" id="secP2Title">معرض الأعمال (2): الذكاء الاصطناعي والتراث الثقافي</h2>
-      <div class="grid">
-        <div class="card">
-          <h3 id="p2_1Title">تجارب وحلول الذكاء الاصطناعي</h3>
-          <p id="p2_1Desc">تطبيقات عملية ومساعدات ذكية لأتمتة سير العمل والمشاريع الرقمية.</p>
-        </div>
-        <div class="card">
-          <h3 id="p2_2Title">التصوير الفني والتراث الجزائري</h3>
-          <p id="p2_2Desc">أرشيف التصوير الفوتوغرافي الفني وتسليط الضوء على المعالم والموروث الثقافي.</p>
-        </div>
-      </div>
-    </section>
-
-    <section id="certificates">
-      <h2 class="section-title" id="secCertTitle">الشهادات والاعتمادات المهنية</h2>
-      <div class="grid">
-        <div class="card" style="border: 1px solid var(--accent-color);">
-          <h3 style="color: #ffffff;" id="cert1Title">شهادة إتمام Claude 101</h3>
-          <p style="color: var(--text-muted); margin-bottom: 12px;">19 أكتوبر 2026 — Anthropic Education</p>
-          <button
-            type="button"
-            class="btn btn-outline pulse"
-            id="btnVerifyCert"
-            style="font-size: 0.85rem; padding: 8px 14px; color: #f87171; border-color: #f87171;"
-          >
-            تحقق من الشهادة
-          </button>
-        </div>
-
-        <div class="card">
-          <h3 id="c1Title">الاعتمادات والدبلومات المهنية</h3>
-          <p id="c1Desc">توثيق الخبرات في التصميم الرقمي، التصوير، وإدارة التقنيات الحديثة والذكاء الاصطناعي.</p>
-        </div>
-      </div>
-    </section>
-
-    <section id="contact">
-      <h2 class="section-title" id="secContactTitle">تواصل معي والقنوات الرسمية</h2>
-
-      <div class="contact-group-title" id="grpPrimary">1. المراسلات والتواصل المباشر</div>
-      <div class="contact-list">
-        <a href="https://wa.me/213674767958" class="contact-item" target="_blank" rel="noopener noreferrer">
-          <span class="label">💬 WhatsApp Business</span>
-          <span class="badge" id="b1">مباشر وسريع</span>
-        </a>
-        <a href="mailto:boustilasaid7@gmail.com" class="contact-item">
-          <span class="label">✉️ Gmail Official</span>
-          <span class="badge" id="b2">المراسلات الرسمية</span>
-        </a>
-        <a href="https://www.linkedin.com/in/said-boustila-1754ab89/" class="contact-item" target="_blank" rel="noopener noreferrer">
-          <span class="label">💼 LinkedIn Profile</span>
-          <span class="badge" id="b3">الهوية المهنية</span>
-        </a>
-        <a href="mailto:boustila@dmail.ai" class="contact-item">
-          <span class="label">🌐 Dmail Web3</span>
-          <span class="badge" id="b3_2">البريد اللامركزي</span>
-        </a>
-      </div>
-
-      <div class="contact-group-title" id="grpDev">2. معارض الأعمال والبرمجة</div>
-      <div class="contact-list">
-        <a href="https://www.behance.net/noureddine715a" class="contact-item" target="_blank" rel="noopener noreferrer">
-          <span class="label">🎨 Behance Portfolio</span>
-          <span class="badge" id="b4">معرض الأعمال</span>
-        </a>
-        <a href="https://github.com/Boustila74" class="contact-item" target="_blank" rel="noopener noreferrer">
-          <span class="label">💻 GitHub Repository</span>
-          <span class="badge" id="b5">المشاريع التقنية</span>
-        </a>
-      </div>
-
-      <div class="contact-group-title" id="grpMedia">3. منصات الفيديو وصناعة المحتوى</div>
-      <div class="contact-list">
-        <a href="https://youtube.com/@boustilasaid" class="contact-item" target="_blank" rel="noopener noreferrer">
-          <span class="label">▶️ YouTube Channel</span>
-          <span class="badge" id="b6">قناة الفيديو</span>
-        </a>
-        <a href="https://www.tiktok.com/@boustila0" class="contact-item" target="_blank" rel="noopener noreferrer">
-          <span class="label">🎵 TikTok Profile</span>
-          <span class="badge" id="b7">المقاطع القصيرة</span>
-        </a>
-        <a href="https://x.com/Boustila74" class="contact-item" target="_blank" rel="noopener noreferrer">
-          <span class="label">𝕏 Profile (@Boustila74)</span>
-          <span class="badge" id="b8">منصة X</span>
-        </a>
-      </div>
-
-      <div class="contact-group-title" id="grpSocial">4. الصفحات والمجتمعات الرسمية</div>
-      <div class="contact-list">
-        <a href="https://www.facebook.com/share/1FdwitDgYF/" class="contact-item" target="_blank" rel="noopener noreferrer">
-          <span class="label">👤 Facebook Personal</span>
-          <span class="badge" id="b9">الملف الشخصي</span>
-        </a>
-        <a href="https://www.facebook.com/share/19jaFoVZ5g/" class="contact-item" target="_blank" rel="noopener noreferrer">
-          <span class="label">📄 Facebook Page 1</span>
-          <span class="badge" id="b10">الصفحة الرسمية 1</span>
-        </a>
-        <a href="https://www.facebook.com/share/1CAShPoGwS/" class="contact-item" target="_blank" rel="noopener noreferrer">
-          <span class="label">📄 Facebook Page 2</span>
-          <span class="badge" id="b11">الصفحة الرسمية 2</span>
-        </a>
-        <a href="https://t.me/BoustilaSaid" class="contact-item" target="_blank" rel="noopener noreferrer">
-          <span class="label">✈️ Telegram Channel</span>
-          <span class="badge" id="b12">قناة التليجرام</span>
-        </a>
-        <a href="https://discord.com/users/boustila" class="contact-item" target="_blank" rel="noopener noreferrer">
-          <span class="label">💬 Discord User</span>
-          <span class="badge" id="b13">مجتمع الديسكورد</span>
-        </a>
-        <a href="https://1tik.social/friendprofile/cmp337k7n0c1a01k4762y91he" class="contact-item" target="_blank" rel="noopener noreferrer">
-          <span class="label">🔗 1Tik Social Profile</span>
-          <span class="badge" id="b14">منصة 1Tik</span>
-        </a>
-      </div>
-    </section>
-  </div>
-
-  <script>
-    const translations = {
-      ar: {
-        dir: "rtl",
-        headerPrimary: "بوسطيلة السعيد",
-        headerSub: "Boustila Said",
-        heroTitle: "بوسطيلة السعيد",
-        heroTagline: "محترف متعدد التخصصات يجمع بين الخبرة الفنية، التقنيات الحديثة، والذكاء الاصطناعي لفهم احتياجات العملاء وتقديم حلول عملية ومبتكرة.",
-        btnPortfolio: "معرض الأعمال 1",
-        btnPortfolio2: "معرض الأعمال 2",
-        btnEstimator: "🧮 حاسبة التكلفة التقديرية",
-        btnPromptTool: "🪄 محسّن البرومبت الذكي",
-        btnConsult: "طلب استشارة خاصة",
-        secServicesTitle: "الخدمات المهنية الرئيسية",
-        s1Title: "1. التصميم الجرافيكي والتواصل البصري",
-        s1Desc: "تصميم الشعارات، الهويات البصرية، الملصقات الإعلانية، وتصاميم وسائل التواصل الاجتماعي.",
-        s2Title: "2. التصوير التجاري والإنتاجي",
-        s2Desc: "تصوير المنتجات، المزارع، المواشي، والمشاريع التجارية لخدمة الأهداف التسويقية.",
-        s3Title: "3. المونتاج والإنتاج المرئي",
-        s3Desc: "تعديل الفيديوهات، مقاطع Reels، الهندسة الصوتية، والإنتاج المعزز بالذكاء الاصطناعي.",
-        s4Title: "4. صناعة المحتوى والدعم التسويقي",
-        s4Desc: "ابتكار أفكار المحتوى، كتابة النصوص الإعلانية، وإعداد خطط النشر الرقمي.",
-        s5Title: "5. الذكاء الاصطناعي والحلول الرقمية",
-        s5Desc: "بناء مساعدين ذكيين، أتمتة مهام العمل (Make.com)، وبناء الوكلاء الأذكياء.",
-        s6Title: "6. تصميم واجهات ومواقع الويب",
-        s6Desc: "تصميم المواقع التعريفية، صفحات الهبوط (Landing Pages)، وتنظيم المحتوى الرقمي.",
-        secP1Title: "معرض الأعمال (1): المشاريع المهنية والتجارية",
-        p1_1Title: "هويات بصرية وعلامات تجارية",
-        p1_1Desc: "نماذج لتصاميم شعارات وهوية بصرية متكاملة للشركات والمشاريع المصغرة.",
-        p1_2Title: "إنتاج مرئي ومونتاج إعلاني",
-        p1_2Desc: "فيديوهات ترويجية وإعلانات منصات التواصل الاجتماعي بمستويات احترافية.",
-        secP2Title: "معرض الأعمال (2): الذكاء الاصطناعي والتراث الثقافي",
-        p2_1Title: "تجارب وحلول الذكاء الاصطناعي",
-        p2_1Desc: "تطبيقات عملية ومساعدات ذكية لأتمتة سير العمل والمشاريع الرقمية.",
-        p2_2Title: "التصوير الفني والتراث الجزائري",
-        p2_2Desc: "أرشيف التصوير الفوتوغرافي الفني وتسليط الضوء على المعالم والموروث الثقافي.",
-        secCertTitle: "الشهادات والاعتمادات المهنية",
-        cert1Title: "شهادة إتمام Claude 101",
-        btnVerifyCert: "تحقق من الشهادة",
-        c1Title: "الاعتمادات والدبلومات المهنية",
-        c1Desc: "توثيق الخبرات في التصميم الرقمي، التصوير، وإدارة التقنيات الحديثة والذكاء الاصطناعي.",
-        secContactTitle: "تواصل معي والقنوات الرسمية",
-        grpPrimary: "1. المراسلات والتواصل المباشر",
-        grpDev: "2. معارض الأعمال والبرمجة",
-        grpMedia: "3. منصات الفيديو وصناعة المحتوى",
-        grpSocial: "4. الصفحات والمجتمعات الرسمية",
-        b1: "مباشر وسريع",
-        b2: "المراسلات الرسمية",
-        b3: "الهوية المهنية",
-        b3_2: "البريد اللامركزي",
-        b4: "معرض الأعمال",
-        b5: "المشاريع التقنية",
-        b6: "قناة الفيديو",
-        b7: "المقاطع القصيرة",
-        b8: "منصة X",
-        b9: "الملف الشخصي",
-        b10: "الصفحة الرسمية 1",
-        b11: "الصفحة الرسمية 2",
-        b12: "قناة التليجرام",
-        b13: "مجتمع الديسكورد",
-        b14: "منصة 1Tik"
-      },
-
-      fr: {
-        dir: "ltr",
-        headerPrimary: "Boustila Said",
-        headerSub: "",
-        heroTitle: "Boustila Said",
-        heroTagline: "Professionnel créatif interdisciplinaire combinant expérience artistique, technologies modernes et intelligence artificielle.",
-        btnPortfolio: "Portfolio 1",
-        btnPortfolio2: "Portfolio 2",
-        btnEstimator: "🧮 Calculateur d'estimation",
-        btnPromptTool: "🪄 Affineur de prompt",
-        btnConsult: "Consultation",
-        secServicesTitle: "Services Principaux",
-        s1Title: "1. Design Graphique & Communication Visuelle",
-        s1Desc: "Conception de logos, identité visuelle, affiches publicitaires et visuels pour réseaux sociaux.",
-        s2Title: "2. Photographie Commerciale & De Terrain",
-        s2Desc: "Photographie de produits, fermes, élevage et projets commerciaux.",
-        s3Title: "3. Montage Vidéo & Production Visuelle",
-        s3Desc: "Montage vidéo, Reels, ingénierie sonore et production assistée par IA.",
-        s4Title: "4. Création De Contenu & Support Marketing",
-        s4Desc: "Idées de contenu, rédaction publicitaire, scripts vidéo et plans de publication.",
-        s5Title: "5. Intelligence Artificielle & Solutions Digitales",
-        s5Desc: "Création d'assistants IA sur mesure, automatisation des tâches (Make.com) et agents intelligents.",
-        s6Title: "6. Design De Sites Web & Interfaces",
-        s6Desc: "Conception de sites vitrine, landing pages et organisation de contenu.",
-        secP1Title: "Portfolio (1) : Projets Professionnels",
-        p1_1Title: "Identités Visuelles",
-        p1_1Desc: "Conception de logos et d'identités visuelles complètes pour entreprises.",
-        p1_2Title: "Production Vidéo & Montage",
-        p1_2Desc: "Vidéos promotionnelles et publicités pour les réseaux sociaux.",
-        secP2Title: "Portfolio (2) : IA & Patrimoine",
-        p2_1Title: "Solutions d'Intelligence Artificielle",
-        p2_1Desc: "Applications pratiques et agents intelligents pour l'automatisation.",
-        p2_2Title: "Photographie Artistique & Patrimoine",
-        p2_2Desc: "Archives photographiques et mise en valeur du patrimoine culturel algérien.",
-        secCertTitle: "Certifications & Diplômes",
-        cert1Title: "Certificat d'achèvement Claude 101",
-        btnVerifyCert: "Vérifier le certificat",
-        c1Title: "Accréditations Professionnelles",
-        c1Desc: "Documentation des compétences en design, photographie et IA.",
-        secContactTitle: "Contact Direct & Canaux Officiels",
-        grpPrimary: "1. Communication Directe",
-        grpDev: "2. Portfolio & Développement",
-        grpMedia: "3. Vidéo & Création de Contenu",
-        grpSocial: "4. Pages & Communautés",
-        b1: "Direct & Rapide",
-        b2: "Officiel",
-        b3: "Profil Pro",
-        b3_2: "Web3 Email",
-        b4: "Portfolio",
-        b5: "Tech Repos",
-        b6: "Chaîne Vidéo",
-        b7: "Vidéos Courtes",
-        b8: "Plateforme X",
-        b9: "Profil Perso",
-        b10: "Page Officielle 1",
-        b11: "Page Officielle 2",
-        b12: "Canal Telegram",
-        b13: "Discord",
-        b14: "1Tik Social"
-      },
-
-      en: {
-        dir: "ltr",
-        headerPrimary: "Boustila Said",
-        headerSub: "",
-        heroTitle: "Boustila Said",
-        heroTagline: "An interdisciplinary creative and digital professional combining artistic experience, modern technologies, and AI.",
-        btnPortfolio: "Portfolio 1",
-        btnPortfolio2: "Portfolio 2",
-        btnEstimator: "🧮 Cost Estimator Tool",
-        btnPromptTool: "🪄 Prompt Refiner Tool",
-        btnConsult: "Request Consultation",
-        secServicesTitle: "Main Professional Services",
-        s1Title: "1. Graphic Design & Visual Communication",
-        s1Desc: "Logo design, visual identity, promotional posters, and social media graphics.",
-        s2Title: "2. Commercial & Field Photography",
-        s2Desc: "Photography for products, farms, livestock, and commercial projects.",
-        s3Title: "3. Video Editing & Visual Production",
-        s3Desc: "Video editing, social media Reels, sound engineering, and AI-assisted video production.",
-        s4Title: "4. Content Creation & Marketing Support",
-        s4Desc: "Content strategy ideas, ad copywriting, video scripts, and digital publishing plans.",
-        s5Title: "5. Artificial Intelligence & Digital Solutions",
-        s5Desc: "Building custom AI assistants, workflow task automation (Make.com), and intelligent agents.",
-        s6Title: "6. Website & Interface Design",
-        s6Desc: "Designing professional presentation websites, landing pages, and content organization.",
-        secP1Title: "Portfolio (1): Professional Projects",
-        p1_1Title: "Visual Identity & Branding",
-        p1_1Desc: "Logo design and complete visual identity packages for small businesses.",
-        p1_2Title: "Video Production & Editing",
-        p1_2Desc: "Promotional videos and social media ads with professional quality.",
-        secP2Title: "Portfolio (2): AI & Cultural Heritage",
-        p2_1Title: "AI Experiments & Solutions",
-        p2_1Desc: "Practical AI applications and custom assistants for task automation.",
-        p2_2Title: "Artistic Photography & Heritage",
-        p2_2Desc: "Artistic photography archive showcasing Algerian cultural heritage.",
-        secCertTitle: "Certificates & Diplomas",
-        cert1Title: "Claude 101 Completion Certificate",
-        btnVerifyCert: "Verify Certificate",
-        c1Title: "Professional Qualifications",
-        c1Desc: "Documentation of expertise in digital design, photography, and AI management.",
-        secContactTitle: "Direct Contact & Official Channels",
-        grpPrimary: "1. Direct Communication",
-        grpDev: "2. Portfolio & Development",
-        grpMedia: "3. Video & Content Creation",
-        grpSocial: "4. Pages & Communities",
-        b1: "Direct & Fast",
-        b2: "Official Email",
-        b3: "Professional Profile",
-        b3_2: "Web3 Mail",
-        b4: "Creative Portfolio",
-        b5: "Tech Repositories",
-        b6: "Video Channel",
-        b7: "Short Videos",
-        b8: "X Platform",
-        b9: "Personal Profile",
-        b10: "Official Page 1",
-        b11: "Official Page 2",
-        b12: "Telegram Channel",
-        b13: "Discord User",
-        b14: "1Tik Social"
-      },
-
-      de: {
-        dir: "ltr",
-        headerPrimary: "Boustila Said",
-        headerSub: "",
-        heroTitle: "Boustila Said",
-        heroTagline: "Ein interdisziplinärer Kreativ- und Digitalprofi, der künstlerische Erfahrung, moderne Technologien und KI kombiniert.",
-        btnPortfolio: "Portfolio 1",
-        btnPortfolio2: "Portfolio 2",
-        btnEstimator: "🧮 Kostenschätzer",
-        btnPromptTool: "🪄 Prompt-Verfeinerer",
-        btnConsult: "Beratung anfordern",
-        secServicesTitle: "Hauptdienstleistungen",
-        s1Title: "1. Grafikdesign & Visuelle Kommunikation",
-        s1Desc: "Logo-Design, visuelle Identität, Werbeplakate und Social-Media-Grafiken.",
-        s2Title: "2. Kommerzielle Fotografie",
-        s2Desc: "Fotografie für Produkte, Bauernhöfe, Vieh und Geschäftsprojekte.",
-        s3Title: "3. Videobearbeitung & Visuelle Produktion",
-        s3Desc: "Videobearbeitung, Social-Media-Reels, Tontechnik und KI-gestützte Videoproduktion.",
-        s4Title: "4. Content-Erstellung & Marketing-Unterstützung",
-        s4Desc: "Content-Ideen, Werbetexte, Videoskripte und digitale Veröffentlichungspläne.",
-        s5Title: "5. Künstliche Intelligenz & Digitale Lösungen",
-        s5Desc: "Erstellung maßgeschneiderter KI-Assistenten, Workflow-Automatisierung (Make.com).",
-        s6Title: "6. Website- & Interface-Design",
-        s6Desc: "Design von professionellen Websites, Landingpages und Inhaltsstrukturierung.",
-        secP1Title: "Portfolio (1): Professionelle Projekte",
-        p1_1Title: "Visuelle Identität & Branding",
-        p1_1Desc: "Logo-Designs und komplette visuelle Identitäten für Unternehmen.",
-        p1_2Title: "Videoproduktion & Bearbeitung",
-        p1_2Desc: "Werbevideos und Social-Media-Anzeigen in professioneller Qualität.",
-        secP2Title: "Portfolio (2): KI & Erbe",
-        p2_1Title: "KI-Experimente & Lösungen",
-        p2_1Desc: "Praktische KI-Anwendungen und intelligente Assistenten zur Automatisierung.",
-        p2_2Title: "Künstlerische Fotografie & Erbe",
-        p2_2Desc: "Künstlerisches Fotoarchiv zur Präsentation des algerischen Kulturerbes.",
-        secCertTitle: "Zertifikate & Diplome",
-        cert1Title: "Claude 101 Abschlusszertifikat",
-        btnVerifyCert: "Zertifikat überprüfen",
-        c1Title: "Berufliche Qualifikationen",
-        c1Desc: "Dokumentierte Erfahrung in digitalem Design, Fotografie und KI-Management.",
-        secContactTitle: "Direktkontakt & Offizielle Kanäle",
-        grpPrimary: "1. Direkte Kommunikation",
-        grpDev: "2. Portfolio & Entwicklung",
-        grpMedia: "3. Video & Content-Erstellung",
-        grpSocial: "4. Seiten & Communities",
-        b1: "Direkt & Schnell",
-        b2: "Offizielle E-Mail",
-        b3: "Berufsprofil",
-        b3_2: "Web3 Mail",
-        b4: "Kreativ-Portfolio",
-        b5: "Tech-Repositories",
-        b6: "Videokanal",
-        b7: "Kurzvideos",
-        b8: "X Plattform",
-        b9: "Persönliches Profil",
-        b10: "Offizielle Seite 1",
-        b11: "Offizielle Seite 2",
-        b12: "Telegram-Kanal",
-        b13: "Discord Community",
-        b14: "1Tik Social"
-      }
-    };
-
-    function switchLanguage(lang) {
-      const validLang = translations[lang] ? lang : "ar";
-      const data = translations[validLang];
-
-      document.documentElement.lang = validLang;
-      document.documentElement.dir = data.dir;
-      document.body.dir = data.dir;
-
-      const ids = [
-        "headerPrimary", "headerSub", "heroTitle", "heroTagline",
-        "btnPortfolio", "btnPortfolio2", "btnEstimator", "btnPromptTool", "btnConsult",
-        "secServicesTitle", "s1Title", "s1Desc", "s2Title", "s2Desc", "s3Title", "s3Desc",
-        "s4Title", "s4Desc", "s5Title", "s5Desc", "s6Title", "s6Desc",
-        "secP1Title", "p1_1Title", "p1_1Desc", "p1_2Title", "p1_2Desc",
-        "secP2Title", "p2_1Title", "p2_1Desc", "p2_2Title", "p2_2Desc",
-        "secCertTitle", "cert1Title", "btnVerifyCert", "c1Title", "c1Desc",
-        "secContactTitle", "grpPrimary", "grpDev", "grpMedia", "grpSocial",
-        "b1", "b2", "b3", "b3_2", "b4", "b5", "b6", "b7", "b8",
-        "b9", "b10", "b11", "b12", "b13", "b14"
-      ];
-
-      ids.forEach((id) => {
-        const el = document.getElementById(id);
-        if (el && data[id]) {
-          el.textContent = data[id];
-        }
-      });
-
-      const headerSub = document.getElementById("headerSub");
-      if (headerSub) {
-        headerSub.style.display = validLang === "ar" ? "block" : "none";
-      }
-
-      const languageSelect = document.getElementById("languageSelect");
-      if (languageSelect) {
-        languageSelect.value = validLang;
-      }
-
-      localStorage.setItem("portfolioLang", validLang);
-    }
-
-    document.addEventListener("DOMContentLoaded", function () {
-      const savedLang = localStorage.getItem("portfolioLang") || "ar";
-
-      const languageSelect = document.getElementById("languageSelect");
-      if (languageSelect) {
-        languageSelect.addEventListener("change", function () {
-          switchLanguage(this.value);
-        });
-      }
-
-      const verifyBtn = document.getElementById("btnVerifyCert");
-      if (verifyBtn) {
-        verifyBtn.addEventListener("click", function () {
-          const verificationUrl = "https://example.com/certificate-verification";
-          window.open(verificationUrl, "_blank", "noopener,noreferrer");
-        });
-      }
-
-      switchLanguage(savedLang);
     });
-  </script>
-</body>
-</html>
+
+    document.querySelectorAll("[data-i18n-opt]").forEach(el => {
+      const key = el.dataset.i18nOpt;
+      if (current[key]) {
+        el.textContent = current[key];
+      }
+    });
+
+    langButtons.forEach(btn => {
+      const isCurrent = btn.dataset.lang === lang;
+      btn.setAttribute("aria-current", isCurrent ? "true" : "false");
+      btn.style.opacity = isCurrent ? "1" : "0.7";
+    });
+  }
+
+  langButtons.forEach(btn => {
+    btn.addEventListener("click", () => applyLanguage(btn.dataset.lang));
+  });
+
+  function validateForm() {
+    const name = document.getElementById("f_name").value.trim();
+    const desc = document.getElementById("f_desc").value.trim();
+
+    const err = document.getElementById("form-error");
+    if (!name || !desc) {
+      err.style.display = "block";
+      return false;
+    }
+
+    err.style.display = "none";
+    return true;
+  }
+
+  function buildMessage() {
+    const lang = document.documentElement.lang || "ar";
+    const selectedLang = T[lang] || T.ar;
+
+    const name = document.getElementById("f_name").value.trim();
+    const contact = document.getElementById("f_contact").value.trim();
+    const service = document.getElementById("f_service").value;
+    const desc = document.getElementById("f_desc").value.trim();
+    const budget = document.getElementById("f_budget").value.trim();
+    const links = document.getElementById("f_links").value.trim();
+
+    const serviceName = document.querySelector("#f_service option:checked")?.textContent || service;
+
+    return [
+      "السلام عليكم",
+      "",
+      `الاسم: ${name}`,
+      `وسيلة التواصل: ${contact}`,
+      `نوع الخدمة: ${serviceName}`,
+      `وصف المشروع: ${desc}`,
+      budget ? `الميزانية التقريبية: ${budget}` : "",
+      links ? `روابط مرجعية: ${links}` : "",
+      "",
+      "شكراً"
+    ].filter(Boolean).join("\n");
+  }
+
+  function sendWhatsApp() {
+    if (!validateForm()) return;
+
+    const msg = encodeURIComponent(buildMessage());
+    const url = `https://wa.me/213674767958?text=${msg}`;
+    window.open(url, "_blank", "noopener");
+  }
+
+  function sendEmail() {
+    if (!validateForm()) return;
+
+    const name = document.getElementById("f_name").value.trim();
+    const contact = document.getElementById("f_contact").value.trim();
+    const service = document.querySelector("#f_service option:checked")?.textContent || "";
+    const desc = document.getElementById("f_desc").value.trim();
+    const budget = document.getElementById("f_budget").value.trim();
+    const links = document.getElementById("f_links").value.trim();
+
+    const subject = encodeURIComponent(`طلب خدمة جديد: ${service}`);
+    const body = encodeURIComponent(
+      `الاسم: ${name}\n` +
+      `وسيلة التواصل: ${contact}\n` +
+      `نوع الخدمة: ${service}\n` +
+      `وصف المشروع:\n${desc}\n` +
+      (budget ? `\nالميزانية التقريبية: ${budget}` : "") +
+      (links ? `\nروابط مرجعية: ${links}` : "")
+    );
+
+    window.location.href = `mailto:boustilasaid7@gmail.com?subject=${subject}&body=${body}`;
+  }
+
+  applyLanguage("ar");
+</script>

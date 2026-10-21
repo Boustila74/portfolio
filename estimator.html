@@ -1,132 +1,35 @@
-<!DOCTYPE html>
-<html lang="ar" dir="rtl">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>حاسبة تقدير تكلفة الخدمات | بوسطيلة السعيد</title>
-    <style>
-        :root {
-            --bg-color: #0f172a;
-            --card-bg: #1e293b;
-            --accent-color: #2563eb;
-            --accent-green: #10b981;
-            --text-main: #f8fafc;
-            --text-muted: #94a3b8;
-            --border-color: #334155;
-        }
+<script>
+    function calculateTotal() {
+        const serviceSelect = document.getElementById('serviceType');
+        const selectedOption = serviceSelect.options[serviceSelect.selectedIndex];
+        const basePrice = parseInt(selectedOption.getAttribute('data-price'), 10) || 0;
 
-        * { box-sizing: border-box; margin: 0; padding: 0; font-family: system-ui, sans-serif; }
-        body { background-color: var(--bg-color); color: var(--text-main); padding: 20px; line-height: 1.6; }
-        
-        .calculator-card {
-            max-width: 600px; margin: 20px auto; background: var(--card-bg);
-            border: 1px solid var(--border-color); border-radius: 12px; padding: 25px;
-        }
+        let quantity = parseInt(document.getElementById('quantity').value, 10);
+        if (Number.isNaN(quantity) || quantity < 1) quantity = 1;
+        if (quantity > 20) quantity = 20;
 
-        h2 { color: #60a5fa; margin-bottom: 10px; text-align: center; }
-        p.subtitle { color: var(--text-muted); text-align: center; margin-bottom: 25px; font-size: 0.95rem; }
+        let extraPrice = 0;
+        if (document.getElementById('extFast').checked) extraPrice += parseInt(document.getElementById('extFast').value, 10) || 0;
+        if (document.getElementById('extSource').checked) extraPrice += parseInt(document.getElementById('extSource').value, 10) || 0;
 
-        .form-group { margin-bottom: 20px; }
-        label { display: block; font-weight: bold; margin-bottom: 8px; }
-        
-        select, input[type="number"] {
-            width: 100%; padding: 12px; background: var(--bg-color);
-            border: 1px solid var(--border-color); border-radius: 8px;
-            color: var(--text-main); font-size: 1rem; outline: none;
-        }
+        const total = (basePrice * quantity) + extraPrice;
+        const formattedTotal = total.toLocaleString('ar-DZ') + " د.ج";
 
-        .checkbox-group { display: flex; flex-direction: column; gap: 10px; margin-top: 10px; }
-        .checkbox-item { display: flex; align-items: center; gap: 10px; cursor: pointer; }
-        .checkbox-item input { width: 18px; height: 18px; accent-color: var(--accent-color); }
+        document.getElementById('totalPrice').innerText = formattedTotal;
 
-        .result-box {
-            background: rgba(37, 99, 235, 0.1); border: 1px solid var(--accent-color);
-            border-radius: 10px; padding: 20px; text-align: center; margin-top: 25px;
-        }
+        const serviceName = selectedOption.text;
+        const phone = "213674767958";
 
-        .price-display { font-size: 1.8rem; font-weight: bold; color: #60a5fa; margin: 10px 0; }
+        const message = `
+مرحباً أستاذ بوسطيلة السعيد، قمت باستعمال حاسبة التقدير في موقعك:
+- الخدمة: ${serviceName}
+- العدد: ${quantity}
+- التكلفة التقديرية: ${formattedTotal}
+`;
 
-        .btn-whatsapp {
-            display: block; width: 100%; background: var(--accent-green); color: white;
-            text-align: center; padding: 14px; border-radius: 8px; text-decoration: none;
-            font-weight: bold; font-size: 1rem; margin-top: 15px; transition: opacity 0.2s;
-        }
-        .btn-whatsapp:hover { opacity: 0.9; }
-        .btn-back { display: block; text-align: center; margin-top: 15px; color: var(--text-muted); text-decoration: none; font-size: 0.9rem; }
-    </style>
-</head>
-<body>
+        document.getElementById('whatsappBtn').href =
+            `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
+    }
 
-    <div class="calculator-card">
-        <h2>حاسبة التكلفة التقديرية</h2>
-        <p class="subtitle">اختر الخدمات المطلوبة للحصول على تقدير فوري للتكلفة والمدة التقديرية</p>
-
-        <!-- اختيار الخدمة الأساسية -->
-        <div class="form-group">
-            <label for="serviceType">1. نوع الخدمة الرئيسية:</label>
-            <select id="serviceType" onchange="calculateTotal()">
-                <option value="graphic" data-price="15000">تصميم هوية بصرية وشعار</option>
-                <option value="video" data-price="20000">مونتاج فيديو إعلاني / Reels</option>
-                <option value="photo" data-price="25000">جلسة تصوير منتجات / تجاري</option>
-                <option value="ai" data-price="30000">أتمتة وحلول الذكاء الاصطناعي</option>
-            </select>
-        </div>
-
-        <!-- الكمية أو العدد -->
-        <div class="form-group">
-            <label for="quantity">2. العدد / عدد التصاميم أو الفيديوهات:</label>
-            <input type="number" id="quantity" value="1" min="1" max="20" onchange="calculateTotal()" oninput="calculateTotal()">
-        </div>
-
-        <!-- خيارات إضافية -->
-        <div class="form-group">
-            <label>3. إضافات خاصة (اختر ما يناسبك):</label>
-            <div class="checkbox-group">
-                <label class="checkbox-item">
-                    <input type="checkbox" id="extFast" value="5000" onchange="calculateTotal()"> تسليم مستعجل (خلال 24-48 ساعة)
-                </label>
-                <label class="checkbox-item">
-                    <input type="checkbox" id="extSource" value="7000" onchange="calculateTotal()"> تسليم الملفات المفتوحة المصدر (PSD / AI / PR)
-                </label>
-            </div>
-        </div>
-
-        <!-- النتيجة -->
-        <div class="result-box">
-            <div>التكلفة التقديرية الحالية:</div>
-            <div class="price-display" id="totalPrice">15,000 د.ج</div>
-            <a href="#" id="whatsappBtn" class="btn-whatsapp" target="_blank">💬 تأكيد وسؤال حول التقدير عبر WhatsApp</a>
-        </div>
-
-        <a href="index.html" class="btn-back">← العودة إلى الموقع الرئيسي</a>
-    </div>
-
-    <script>
-        function calculateTotal() {
-            const serviceSelect = document.getElementById('serviceType');
-            const selectedOption = serviceSelect.options[serviceSelect.selectedIndex];
-            const basePrice = parseInt(selectedOption.getAttribute('data-price'));
-            const quantity = parseInt(document.getElementById('quantity').value) || 1;
-            
-            let extraPrice = 0;
-            if (document.getElementById('extFast').checked) extraPrice += parseInt(document.getElementById('extFast').value);
-            if (document.getElementById('extSource').checked) extraPrice += parseInt(document.getElementById('extSource').value);
-
-            const total = (basePrice * quantity) + extraPrice;
-            const formattedTotal = total.toLocaleString('ar-DZ') + " د.ج";
-
-            document.getElementById('totalPrice').innerText = formattedTotal;
-
-            // إعداد رابط الواتساب التلقائي مع تفاصيل الحساب
-            const serviceName = selectedOption.text;
-            const phone = "213674767958";
-            const message = `مرحباً أستاذ بوسطيلة السعيد، قمت باستعمال حاسبة التقدير في موقعك:%0A- الخدمة: ${serviceName}%0A- العدد: ${quantity}%0A- التكلفة التقديرية: ${formattedTotal}%0Aأود مناقشة التفاصيل معكم.`;
-            
-            document.getElementById('whatsappBtn').href = `https://wa.me/${phone}?text=${message}`;
-        }
-
-        // الحساب المبدئي عند التحميل
-        calculateTotal();
-    </script>
-</body>
-</html>
+    calculateTotal();
+</script>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Eline Farm Dz | مزرعة إلين</title>
+<script src="https://cdn.tailwindcss.com/3.4.17"></script>
+<link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#F3EAD6;--card:#FBF6E9;--ink:#2B2418;--green:#2F5233;--gold:#B8892B;--red:#B3341F;--line:#D9C9A3;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#1D1A12;--card:#272217;--ink:#F1E8D2;--green:#7FB083;--gold:#D9A94A;--red:#E4694F;--line:#4A402A}}
+html{height:100%;scroll-padding-top:env(safe-area-inset-top,0px)}
+body{background:var(--bg);color:var(--ink);font-family:Cairo,system-ui,sans-serif;margin:0}
+h1,h2,h3,.serif{font-family:Amiri,Georgia,serif}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px}
+.btn{background:var(--green);color:#fff;border-radius:999px;padding:.55rem 1.2rem;font-weight:600;cursor:pointer;border:0}
+.btn.alt{background:transparent;color:var(--ink);border:1.5px solid var(--gold)}
+input,select{background:var(--bg);color:var(--ink);border:1px solid var(--line);border-radius:10px;padding:.5rem .7rem;width:100%}
+:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+.hero{background:linear-gradient(180deg,#e9c77f 0%,#c99a4b 38%,#6b7a3a 39%,#2F5233 100%);color:#fff}
+.tile{aspect-ratio:4/3;border-radius:12px;display:flex;align-items:flex-end;padding:.7rem;color:#fff;font-weight:600}
+@keyframes spin{to{transform:rotate(360deg)}}
+.rope{animation:spin 40s linear infinite;transform-origin:50% 50%}
+@media (prefers-reduced-motion:reduce){.rope{animation:none}}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--bg);z-index:10}
+</style>
+</head>
+<body>
+<div id="app"></div>
+<div id="toast" class="fixed bottom-4 left-1/2 -translate-x-1/2 card px-4 py-2 hidden z-50" role="status"></div>
